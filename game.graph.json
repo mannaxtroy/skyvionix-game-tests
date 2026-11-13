@@ -1,0 +1,1557 @@
+[ {
+  "path" : "/<AnonymousRoot>",
+  "hexDigest" : null,
+  "children" : [ "/app/collections/bootstrap/main.collectionc", "/render/starbreaker.renderc", "/input/game.input_bindingc", "/builtins/input/default.gamepadsc", "/resources/starbreaker_display_profiles.display_profilesc" ]
+}, {
+  "path" : "/app/collections/bootstrap/main.collectionc",
+  "hexDigest" : "4d743288be3622704dc62672f7f326476f6e7fe6",
+  "children" : [ "/app/objects/core/controller.goc", "/app/objects/audio/sounds.goc", "/game/objects/screens/popups/credits_popup_screen.goc", "/game/objects/bootstrap/entry.goc", "/game/objects/deferred_assets/deferred_assets.goc", "/game/objects/fonts/fonts.goc", "/game/objects/audio/music.goc", "/game/objects/audio/sounds.goc", "/game/objects/screens/gameplay_screen.goc", "/learn/poki_guide.goc", "/learn/popup_screen.goc", "/game/objects/screens/mothership_screen.goc", "/game/objects/screens/popups/pause_popup_screen.goc", "/game/objects/screens/popups/reward_confirm_popup_screen.goc", "/app/objects/screens.goc", "/game/objects/screens/popups/result_popup_screen.goc", "/game/objects/screens/popups/skin_reward_popup_screen.goc" ]
+}, {
+  "path" : "/app/objects/core/controller.goc",
+  "hexDigest" : "49ec8b6b9edcf2e4fd1ec2bc789be8f3f938b04f",
+  "children" : [ "/app/scripts/core/app.scriptc" ]
+}, {
+  "path" : "/app/scripts/core/app.scriptc",
+  "hexDigest" : "e1527a8f69f9e5f945a91bccdc66e22a8960c21f",
+  "children" : [ "/druid/druid.luac", "/monarch/monarch.luac", "/app/modules/platform/poki_service.luac", "/common/audio/service.luac", "/common/audio/client.luac", "/common/audio/messages.luac", "/app/modules/audio/audio_events.luac", "/common/input/mode.luac" ]
+}, {
+  "path" : "/druid/druid.luac",
+  "hexDigest" : "9f3dd9f81c35a4b8eec0e2306e9d6f282c9e8e3c",
+  "children" : [ "/event/event.luac", "/event/events.luac", "/druid/system/settings.luac", "/druid/system/druid_instance.luac", "/druid/system/druid_logger.luac", "/druid/styles/default/style.luac" ]
+}, {
+  "path" : "/event/event.luac",
+  "hexDigest" : "7d16ebc765bab166c4474b10e2d7f98b399f5ccb",
+  "children" : [ ]
+}, {
+  "path" : "/event/events.luac",
+  "hexDigest" : "7530b2b5f7e4646a6cbd95387cd8631e5099531e",
+  "children" : [ "/event/event.luac" ]
+}, {
+  "path" : "/druid/system/settings.luac",
+  "hexDigest" : "ab1f9867bb2f376d05f54a86ef753e02613964a7",
+  "children" : [ ]
+}, {
+  "path" : "/druid/system/druid_instance.luac",
+  "hexDigest" : "cbc6371beeb2d4c961e37c5b662ad68d42e72f0e",
+  "children" : [ "/event/events.luac", "/druid/const.luac", "/druid/system/settings.luac", "/druid/component.luac", "/druid/base/button.luac", "/druid/base/blocker.luac", "/druid/base/back_handler.luac", "/druid/base/hover.luac", "/druid/base/text.luac", "/druid/base/static_grid.luac", "/druid/base/scroll.luac", "/druid/base/drag.luac", "/druid/extended/swipe.luac", "/druid/extended/lang_text.luac", "/druid/extended/slider.luac", "/druid/extended/input.luac", "/druid/extended/data_list.luac", "/druid/extended/timer.luac", "/druid/extended/progress.luac", "/druid/extended/layout.luac", "/druid/extended/container.luac", "/druid/extended/hotkey.luac", "/druid/custom/rich_text/rich_text.luac", "/druid/custom/rich_input/rich_input.luac" ]
+}, {
+  "path" : "/druid/const.luac",
+  "hexDigest" : "0dff164b1fa1966095ef701513b00c0e8a0195cc",
+  "children" : [ ]
+}, {
+  "path" : "/druid/component.luac",
+  "hexDigest" : "99ae2716c1cc84da14c167c8e175472d639433e8",
+  "children" : [ "/druid/const.luac", "/druid/helper.luac" ]
+}, {
+  "path" : "/druid/helper.luac",
+  "hexDigest" : "9d636b668416c6bbc4f98285730b2be7693e6d36",
+  "children" : [ "/druid/const.luac" ]
+}, {
+  "path" : "/druid/base/button.luac",
+  "hexDigest" : "6838c114e59a43c0d279e798dbc21260aa3d9d2c",
+  "children" : [ "/event/event.luac", "/druid/const.luac", "/druid/helper.luac", "/druid/component.luac" ]
+}, {
+  "path" : "/druid/base/blocker.luac",
+  "hexDigest" : "83a0bc60147dab2a1d9ff425ddcab72f68b000b9",
+  "children" : [ "/druid/const.luac", "/druid/component.luac" ]
+}, {
+  "path" : "/druid/base/back_handler.luac",
+  "hexDigest" : "62393441d993fa097784b6aa95989250651e53c7",
+  "children" : [ "/event/event.luac", "/druid/const.luac", "/druid/component.luac" ]
+}, {
+  "path" : "/druid/base/hover.luac",
+  "hexDigest" : "b611855d1bf8e1d3d3944f2fbc50629aabeda6b4",
+  "children" : [ "/event/event.luac", "/druid/const.luac", "/druid/helper.luac", "/druid/component.luac" ]
+}, {
+  "path" : "/druid/base/text.luac",
+  "hexDigest" : "9d9dd9751a33ca465f2b1e642f2c0dd259e1d706",
+  "children" : [ "/event/event.luac", "/druid/const.luac", "/druid/helper.luac", "/druid/system/utf8.luac", "/druid/component.luac" ]
+}, {
+  "path" : "/druid/system/utf8.luac",
+  "hexDigest" : "5660bec526febcd56397301d1d8cdb37fa00a8d2",
+  "children" : [ ]
+}, {
+  "path" : "/druid/base/static_grid.luac",
+  "hexDigest" : "8d8fbb79f8f67dc7c0755a6d5ee4f9ab8b5aebcc",
+  "children" : [ "/druid/const.luac", "/event/event.luac", "/druid/helper.luac", "/druid/component.luac" ]
+}, {
+  "path" : "/druid/base/scroll.luac",
+  "hexDigest" : "7294731021fc339dca55c2d8dec6bbb3293d8618",
+  "children" : [ "/event/event.luac", "/druid/const.luac", "/druid/helper.luac", "/druid/component.luac" ]
+}, {
+  "path" : "/druid/base/drag.luac",
+  "hexDigest" : "0583e02ae05e7596398f04977950c4636e3ca3b5",
+  "children" : [ "/event/event.luac", "/druid/const.luac", "/druid/helper.luac", "/druid/component.luac" ]
+}, {
+  "path" : "/druid/extended/swipe.luac",
+  "hexDigest" : "8c3be155c678bcf9ad167c2fee194719402438db",
+  "children" : [ "/event/event.luac", "/druid/const.luac", "/druid/helper.luac", "/druid/component.luac" ]
+}, {
+  "path" : "/druid/extended/lang_text.luac",
+  "hexDigest" : "548561ef09e1f822f2c29a946dcdb36aa0553900",
+  "children" : [ "/event/event.luac", "/druid/component.luac", "/druid/system/settings.luac" ]
+}, {
+  "path" : "/druid/extended/slider.luac",
+  "hexDigest" : "4a87d875d3477ce80006c8043edd59521093fb3a",
+  "children" : [ "/event/event.luac", "/druid/helper.luac", "/druid/const.luac", "/druid/component.luac" ]
+}, {
+  "path" : "/druid/extended/input.luac",
+  "hexDigest" : "3f10f91ba0a2d1ba431e9f0e2dbe5df4e43b0dba",
+  "children" : [ "/event/event.luac", "/druid/const.luac", "/druid/helper.luac", "/druid/component.luac", "/druid/system/utf8.luac" ]
+}, {
+  "path" : "/druid/extended/data_list.luac",
+  "hexDigest" : "70736261988e6398d3e294abc5dbe7ef7962a64d",
+  "children" : [ "/druid/const.luac", "/druid/helper.luac", "/druid/component.luac", "/event/event.luac" ]
+}, {
+  "path" : "/druid/extended/timer.luac",
+  "hexDigest" : "f2a88d60479916de76bc6b5ac5bc1d4dbba69807",
+  "children" : [ "/event/event.luac", "/druid/helper.luac", "/druid/component.luac" ]
+}, {
+  "path" : "/druid/extended/progress.luac",
+  "hexDigest" : "fa08eef9b0175a1463b92f3fe2e916c8297fa62e",
+  "children" : [ "/event/event.luac", "/druid/helper.luac", "/druid/component.luac" ]
+}, {
+  "path" : "/druid/extended/layout.luac",
+  "hexDigest" : "4bf14e2e74cde028e5d6dc479cc43209ee14afa4",
+  "children" : [ "/event/event.luac", "/druid/helper.luac", "/druid/component.luac" ]
+}, {
+  "path" : "/druid/extended/container.luac",
+  "hexDigest" : "ebb5c52bf9d9b6d39772693b95ebb5a20ba427e3",
+  "children" : [ "/druid/const.luac", "/druid/helper.luac", "/druid/component.luac", "/event/event.luac" ]
+}, {
+  "path" : "/druid/extended/hotkey.luac",
+  "hexDigest" : "e0143e23e984152ab7eb8bcb77ae0673aedf2b03",
+  "children" : [ "/event/event.luac", "/druid/helper.luac", "/druid/component.luac" ]
+}, {
+  "path" : "/druid/custom/rich_text/rich_text.luac",
+  "hexDigest" : "8fceb7f6e945d2fbc7ebd2fb4d76cf89611fc2f0",
+  "children" : [ "/druid/helper.luac", "/druid/component.luac", "/druid/custom/rich_text/module/rt.luac" ]
+}, {
+  "path" : "/druid/custom/rich_text/module/rt.luac",
+  "hexDigest" : "7006e24d20fc17bc525f0aa91b9c6cb63459fef6",
+  "children" : [ "/druid/helper.luac", "/druid/custom/rich_text/module/rt_parse.luac", "/druid/system/utf8.luac" ]
+}, {
+  "path" : "/druid/custom/rich_text/module/rt_parse.luac",
+  "hexDigest" : "4619ee2e98fe0d0afb883ff75a4781b07623d8c6",
+  "children" : [ "/druid/custom/rich_text/module/rt_tags.luac", "/druid/system/utf8.luac" ]
+}, {
+  "path" : "/druid/custom/rich_text/module/rt_tags.luac",
+  "hexDigest" : "6bc059ecc69633896e1c7b9c0ba3e6a77ac5dc6d",
+  "children" : [ "/druid/color.luac" ]
+}, {
+  "path" : "/druid/color.luac",
+  "hexDigest" : "3c7937a0f319e2595d80d7abdb8194ea03b54d30",
+  "children" : [ "/druid/system/druid_logger.luac" ]
+}, {
+  "path" : "/druid/system/druid_logger.luac",
+  "hexDigest" : "a69b28ebaa3df4af95295f949cfe8da72c73d4bd",
+  "children" : [ "/druid/helper.luac" ]
+}, {
+  "path" : "/druid/custom/rich_input/rich_input.luac",
+  "hexDigest" : "d8c50e8c558e65f30e5427d46f70f17d94c05bbd",
+  "children" : [ "/druid/component.luac", "/druid/helper.luac", "/druid/const.luac", "/druid/system/utf8.luac" ]
+}, {
+  "path" : "/druid/styles/default/style.luac",
+  "hexDigest" : "dce2959f0d262faf677beb173dd5570d51246c9c",
+  "children" : [ "/druid/system/settings.luac" ]
+}, {
+  "path" : "/monarch/monarch.luac",
+  "hexDigest" : "56eb55301f63867d5a893aa933f24825102b674f",
+  "children" : [ "/monarch/utils/callback_tracker.luac", "/monarch/utils/async.luac" ]
+}, {
+  "path" : "/monarch/utils/callback_tracker.luac",
+  "hexDigest" : "77132bfaa6f16b6795377ac5c48384dd1e5ec315",
+  "children" : [ ]
+}, {
+  "path" : "/monarch/utils/async.luac",
+  "hexDigest" : "d125bee46e8f3186fd4f32dd8f4b0aac911f8a8b",
+  "children" : [ ]
+}, {
+  "path" : "/app/modules/platform/poki_service.luac",
+  "hexDigest" : "a5f17a8df7d30c5120d9253766bae00ede7db59a",
+  "children" : [ "/common/ad_state.luac", "/ads_wrapper/ads_wrapper.luac", "/ads_wrapper/events.luac", "/ads_wrapper/ads_networks/poki.luac" ]
+}, {
+  "path" : "/common/ad_state.luac",
+  "hexDigest" : "dfcefe3cbecf7cc403de0e203a29d7091477f893",
+  "children" : [ "/event/event.luac" ]
+}, {
+  "path" : "/ads_wrapper/ads_wrapper.luac",
+  "hexDigest" : "c7237cba9cb5dd116759402fbbccec13b71e0da3",
+  "children" : [ "/ads_wrapper/mediator.luac", "/ads_wrapper/queue.luac", "/ads_wrapper/wrapper.luac", "/ads_wrapper/ads_networks/helper.luac" ]
+}, {
+  "path" : "/ads_wrapper/mediator.luac",
+  "hexDigest" : "283e6708dafab2890423c9daacc51fc24884075e",
+  "children" : [ "/ads_wrapper/queue.luac", "/ads_wrapper/events.luac", "/ads_wrapper/ads_networks/helper.luac" ]
+}, {
+  "path" : "/ads_wrapper/queue.luac",
+  "hexDigest" : "789b52e3021d34318b60ab0d96ee87c84e3199dc",
+  "children" : [ "/ads_wrapper/events.luac" ]
+}, {
+  "path" : "/ads_wrapper/events.luac",
+  "hexDigest" : "e189e695aeadec09db4b03700d71077fba5e2a86",
+  "children" : [ ]
+}, {
+  "path" : "/ads_wrapper/ads_networks/helper.luac",
+  "hexDigest" : "7f6c4be5d57f8eb24fb7295ac3f0c63f983f3bd9",
+  "children" : [ "/ads_wrapper/events.luac" ]
+}, {
+  "path" : "/ads_wrapper/wrapper.luac",
+  "hexDigest" : "4669b4f60646072e777a75aeea2dd4ec88aab49c",
+  "children" : [ "/ads_wrapper/events.luac", "/ads_wrapper/ads_networks/helper.luac" ]
+}, {
+  "path" : "/ads_wrapper/ads_networks/poki.luac",
+  "hexDigest" : "9d54602084b832c00582f39ca9880fdab06930c9",
+  "children" : [ "/ads_wrapper/ads_networks/helper.luac" ]
+}, {
+  "path" : "/common/audio/service.luac",
+  "hexDigest" : "c7692026cd59b71c54f98b82ef16b69ad748538f",
+  "children" : [ "/common/math_utils.luac" ]
+}, {
+  "path" : "/common/math_utils.luac",
+  "hexDigest" : "d67c3a66ee78e6da7e7b3ce2f5e6b040dcd30e22",
+  "children" : [ ]
+}, {
+  "path" : "/common/audio/client.luac",
+  "hexDigest" : "76c6b659920247029ae766dc342ca63540fc265f",
+  "children" : [ "/common/audio/messages.luac" ]
+}, {
+  "path" : "/common/audio/messages.luac",
+  "hexDigest" : "cbdce851c70b5a931a83c5f6f1ccea2da12f6fbf",
+  "children" : [ ]
+}, {
+  "path" : "/app/modules/audio/audio_events.luac",
+  "hexDigest" : "e62ae90efef2c993d3c499f7f891e53ed5ade08d",
+  "children" : [ ]
+}, {
+  "path" : "/common/input/mode.luac",
+  "hexDigest" : "2b69a9a94a03eeb94ac0f40403407de4d17637fa",
+  "children" : [ ]
+}, {
+  "path" : "/app/objects/audio/sounds.goc",
+  "hexDigest" : "429b4a942d6731696b0a16edab6daf4a507d31bc",
+  "children" : [ "/_generated_9bc08d8d15f090f9.soundc", "/_generated_ae24accdc4750560.soundc", "/_generated_70e6bb7003f73d38.soundc", "/_generated_659cddb62a7136ab.soundc", "/_generated_72cffea445ca531b.soundc" ]
+}, {
+  "path" : "/_generated_9bc08d8d15f090f9.soundc",
+  "hexDigest" : "cfeab8bc3c640826a6bc619ebdd213b2708f2e3c",
+  "children" : [ "/assets/audio/click_001.oggc" ]
+}, {
+  "path" : "/assets/audio/click_001.oggc",
+  "hexDigest" : "556598da13e9af9117af6adfa0b6b25025f3cfee",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_ae24accdc4750560.soundc",
+  "hexDigest" : "a9c91b971d38e765ac85f892c5d534feabce81a3",
+  "children" : [ "/assets/audio/select_001.oggc" ]
+}, {
+  "path" : "/assets/audio/select_001.oggc",
+  "hexDigest" : "c6ffd27e2cf2ddf036e398c0576caeb30b1a7f82",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_70e6bb7003f73d38.soundc",
+  "hexDigest" : "305f0adc1ceae95d5e1b07018e1fa2be040e7e22",
+  "children" : [ "/assets/audio/powerUp2.oggc" ]
+}, {
+  "path" : "/assets/audio/powerUp2.oggc",
+  "hexDigest" : "a27d54a4044bdcd8ac3770e33a1fc202d370e02c",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_659cddb62a7136ab.soundc",
+  "hexDigest" : "f62b26af045684c43c1dbbefd83f373d7bc7b371",
+  "children" : [ "/assets/audio/powerUp8.oggc" ]
+}, {
+  "path" : "/assets/audio/powerUp8.oggc",
+  "hexDigest" : "8723c4bea0f63565b1701ab1cc8927f2bb5adf58",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_72cffea445ca531b.soundc",
+  "hexDigest" : "67d2ed03d8d241699a319239ff6e0575e687bee2",
+  "children" : [ "/assets/audio/error_001.oggc" ]
+}, {
+  "path" : "/assets/audio/error_001.oggc",
+  "hexDigest" : "6eeec2a2333b5a14dfe19fcdc146109c7635aaff",
+  "children" : [ ]
+}, {
+  "path" : "/game/objects/screens/popups/credits_popup_screen.goc",
+  "hexDigest" : "b13d3750900f3455afd2d6309a55cc53638872a2",
+  "children" : [ "/monarch/screen_proxy.scriptc", "/_generated_6a1ba40dcafd3415.collectionproxyc" ]
+}, {
+  "path" : "/monarch/screen_proxy.scriptc",
+  "hexDigest" : "ecd61989467f0e39b447247d18def0469fd1e22a",
+  "children" : [ "/monarch/monarch.luac" ]
+}, {
+  "path" : "/_generated_6a1ba40dcafd3415.collectionproxyc",
+  "hexDigest" : "4d3b4d47955a7eaee847e1f30a5689256eede963",
+  "nodeType" : "CollectionProxy",
+  "children" : [ "/game/collections/screens/popups/credits.collectionc" ]
+}, {
+  "path" : "/game/collections/screens/popups/credits.collectionc",
+  "hexDigest" : "627ac8eb389b2508faedb7950026af7f1cb423a2",
+  "children" : [ "/game/objects/screens/popups/credits.goc" ]
+}, {
+  "path" : "/game/objects/screens/popups/credits.goc",
+  "hexDigest" : "90aeda693caf8f4617b7cedd6bf511eb36cae299",
+  "children" : [ "/game/resources/gui/screens/popups/credits.guic" ]
+}, {
+  "path" : "/game/resources/gui/screens/popups/credits.guic",
+  "hexDigest" : "8b058f8dee4619eb624f8ecfbd67b7a7b3cec27a",
+  "children" : [ "/game/scripts/screens/popups/credits.gui_scriptc", "/assets/fonts/title.fontc", "/assets/fonts/body.fontc", "/assets/atlases/ui.a.texturesetc", "/builtins/materials/gui.materialc" ]
+}, {
+  "path" : "/game/scripts/screens/popups/credits.gui_scriptc",
+  "hexDigest" : "6342d7416eb24da6948d8a0ed3268aefc35e531a",
+  "children" : [ "/common/addresses.luac", "/ui/templates/button.luac", "/common/input/actions.luac", "/ui/colors.luac", "/ui/popup.luac" ]
+}, {
+  "path" : "/common/addresses.luac",
+  "hexDigest" : "7291022942d23709798eec813a22dc08d89805ca",
+  "children" : [ ]
+}, {
+  "path" : "/ui/templates/button.luac",
+  "hexDigest" : "a015710c0b20a0888a7bbf0c133a3acf8e492832",
+  "children" : [ "/common/ad_state.luac" ]
+}, {
+  "path" : "/common/input/actions.luac",
+  "hexDigest" : "a0befba79e6100de8ed611425d5536cf62a0ba65",
+  "children" : [ ]
+}, {
+  "path" : "/ui/colors.luac",
+  "hexDigest" : "f1e0f8a99a4333375bec4c67d4624fc09ca2f000",
+  "children" : [ ]
+}, {
+  "path" : "/ui/popup.luac",
+  "hexDigest" : "0d5c036e5e9a292113f3ada6941a1f38c84716a8",
+  "children" : [ "/druid/druid.luac", "/monarch/monarch.luac", "/ui/screen_transitions.luac", "/ui/screen_input.luac", "/common/input/actions.luac", "/ui/colors.luac", "/ui/templates/button.luac" ]
+}, {
+  "path" : "/ui/screen_transitions.luac",
+  "hexDigest" : "1101bd366806b002bf9e2b410f4ae284e67703bd",
+  "children" : [ "/monarch/monarch.luac", "/monarch/transitions/gui.luac" ]
+}, {
+  "path" : "/monarch/transitions/gui.luac",
+  "hexDigest" : "b22130909143a630954a1b0d374ed315c9bd5d71",
+  "children" : [ "/monarch/monarch.luac", "/monarch/transitions/easings.luac" ]
+}, {
+  "path" : "/monarch/transitions/easings.luac",
+  "hexDigest" : "29e8ca7e49508bde2cd1873051f8c716654eb995",
+  "children" : [ ]
+}, {
+  "path" : "/ui/screen_input.luac",
+  "hexDigest" : "a07212c9a88ca7d0ac4a64fb988f727f84966264",
+  "children" : [ "/common/input/mode.luac", "/ui/templates/button.luac", "/common/input/actions.luac", "/common/input/axis.luac", "/common/audio/client.luac", "/common/ad_state.luac" ]
+}, {
+  "path" : "/common/input/axis.luac",
+  "hexDigest" : "49ba791a95f78ea2621ae795af9cad0823a1a10b",
+  "children" : [ ]
+}, {
+  "path" : "/assets/fonts/title.fontc",
+  "hexDigest" : "2e259108e887f1a34d4a3538b58515cbc2258e62",
+  "children" : [ "/builtins/fonts/font-df.materialc", "/_generated_Oxanium-SemiBold_4826d05f3086bb88.glyph_bankc" ]
+}, {
+  "path" : "/builtins/fonts/font-df.materialc",
+  "hexDigest" : "ab8c7f4e2bd72ba85abe96bfaa9344d88402b234",
+  "children" : [ "/shader_6592067761991147028.spc" ]
+}, {
+  "path" : "/shader_6592067761991147028.spc",
+  "hexDigest" : "31c218afe65b394fab2c3f04d3cd4e2e4e90abd3",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_Oxanium-SemiBold_4826d05f3086bb88.glyph_bankc",
+  "hexDigest" : "d1a1bda4e6686080f40cfbd59a1598e2e2a5924b",
+  "children" : [ ]
+}, {
+  "path" : "/assets/fonts/body.fontc",
+  "hexDigest" : "0aa991af21326e017a69078223fc50c15a988bf0",
+  "children" : [ "/builtins/fonts/font-df.materialc", "/_generated_Oxanium-SemiBold_a7df77525647a3f8.glyph_bankc" ]
+}, {
+  "path" : "/_generated_Oxanium-SemiBold_a7df77525647a3f8.glyph_bankc",
+  "hexDigest" : "09349818dc06435fe930e4b56d1ae3a254611552",
+  "children" : [ ]
+}, {
+  "path" : "/assets/atlases/ui.a.texturesetc",
+  "hexDigest" : "bfdfa91504e151d62b957519c838674395f87679",
+  "children" : [ "/assets/atlases/ui.texturec" ]
+}, {
+  "path" : "/assets/atlases/ui.texturec",
+  "hexDigest" : "24a19a38f56c77ad31947ffbc350b8111d0605d8",
+  "children" : [ ]
+}, {
+  "path" : "/builtins/materials/gui.materialc",
+  "hexDigest" : "ea4cbed1ddcc693822de188e07c6acc30e862c99",
+  "children" : [ "/shader_2713870051161532414.spc" ]
+}, {
+  "path" : "/shader_2713870051161532414.spc",
+  "hexDigest" : "708d407ccc12f41b1f215dd0740c20efbfa95cf3",
+  "children" : [ ]
+}, {
+  "path" : "/game/objects/bootstrap/entry.goc",
+  "hexDigest" : "82792773ed738131e5a727b24f066756c1c9009c",
+  "children" : [ "/game/scripts/bootstrap/entry.scriptc" ]
+}, {
+  "path" : "/game/scripts/bootstrap/entry.scriptc",
+  "hexDigest" : "81b2939081a32d18976221deff52ff518fffa571",
+  "children" : [ "/game/modules/bootstrap/entry.luac" ]
+}, {
+  "path" : "/game/modules/bootstrap/entry.luac",
+  "hexDigest" : "68cad622b29177a1e1459b27d48acec00fb075f5",
+  "children" : [ "/druid/druid.luac", "/monarch/monarch.luac", "/lang/lang.luac", "/common/ad_state.luac", "/common/addresses.luac", "/game/modules/audio/audio_events.luac", "/game/modules/profile/progress.luac", "/app/modules/assets/deferred_pack_loader.luac", "/game/modules/deferred_assets/deferred_assets.luac", "/game/modules/audio/music.luac", "/game/modules/runtime/gameplay.luac", "/game/modules/runtime/app_state.luac", "/game/modules/runtime/tutorials.luac", "/game/modules/flow/screen_flow.luac", "/game/modules/shop/shop_flow.luac", "/game/modules/flow/settings_flow.luac", "/game/modules/flow/pause_flow.luac", "/game/modules/flow/session_flow.luac", "/game/modules/flow/result_flow.luac", "/common/audio/client.luac" ]
+}, {
+  "path" : "/lang/lang.luac",
+  "hexDigest" : "b7f6c453573470e35da0f5e6d44128b42ce9c216",
+  "children" : [ "/lang/internal/lang_internal.luac", "/lang/internal/lang_registry.luac", "/lang/internal/lang_logger.luac" ]
+}, {
+  "path" : "/lang/internal/lang_internal.luac",
+  "hexDigest" : "34730768b2c36fea7bca7789ec3c0ba50433fc6b",
+  "children" : [ "/lang/csv.luac", "/lang/internal/lang_logger.luac" ]
+}, {
+  "path" : "/lang/csv.luac",
+  "hexDigest" : "cfa862592c2f8734bc2eda8d68380b17ee639606",
+  "children" : [ ]
+}, {
+  "path" : "/lang/internal/lang_logger.luac",
+  "hexDigest" : "31f7c4491b46f8033050a064c973d2c50422fe86",
+  "children" : [ ]
+}, {
+  "path" : "/lang/internal/lang_registry.luac",
+  "hexDigest" : "caffa1be76be5bcb5beaa4476f3aeb7abdcd152c",
+  "children" : [ "/lang/internal/lang_internal.luac", "/lang/internal/lang_logger.luac" ]
+}, {
+  "path" : "/game/modules/audio/audio_events.luac",
+  "hexDigest" : "48fa403a583d2a53fa3d7bad50c2d2c177f9abc4",
+  "children" : [ ]
+}, {
+  "path" : "/game/modules/profile/progress.luac",
+  "hexDigest" : "0b57e059f7b4a667f79f4c933ee2d3a3794e304a",
+  "children" : [ "/game/modules/rules/config.luac", "/game/modules/rules/levels.luac", "/game/modules/rules/profile.luac", "/game/modules/content/languages.luac", "/common/math_utils.luac", "/saver/saver.luac", "/lang/lang.luac" ]
+}, {
+  "path" : "/game/modules/rules/config.luac",
+  "hexDigest" : "cbe2cb927017c3280e6fa7ce047013942ee90f42",
+  "children" : [ ]
+}, {
+  "path" : "/game/modules/rules/levels.luac",
+  "hexDigest" : "e4d0e6cb1ae45c9f43ddac2f78acf80cc0527065",
+  "children" : [ "/game/modules/rules/level_config.luac" ]
+}, {
+  "path" : "/game/modules/rules/level_config.luac",
+  "hexDigest" : "6c6374b7cbf4aa03a26b25c1fd7bb4f55a87fb66",
+  "children" : [ ]
+}, {
+  "path" : "/game/modules/rules/profile.luac",
+  "hexDigest" : "3b6558193aa397eb61fcd62fa6982900912a57fe",
+  "children" : [ "/game/modules/rules/config.luac", "/game/modules/rules/levels.luac", "/common/math_utils.luac" ]
+}, {
+  "path" : "/game/modules/content/languages.luac",
+  "hexDigest" : "022ac802bada431cdb3c4ba35ee29177714686cf",
+  "children" : [ "/common/math_utils.luac", "/resources/languages/en.luac", "/resources/languages/pl.luac", "/resources/languages/fr.luac", "/resources/languages/es.luac", "/resources/languages/it.luac", "/resources/languages/de.luac", "/resources/languages/pt.luac", "/resources/languages/ru.luac", "/resources/languages/zh.luac", "/resources/languages/ja.luac", "/resources/languages/ko.luac", "/resources/languages/fa.luac" ]
+}, {
+  "path" : "/resources/languages/en.luac",
+  "hexDigest" : "3e99fcdfdf7779ed6f1ad33869630c0af8612d74",
+  "children" : [ ]
+}, {
+  "path" : "/resources/languages/pl.luac",
+  "hexDigest" : "dfd6e5bb7ab78a10b63fe5eb4624cbc40914eb1d",
+  "children" : [ ]
+}, {
+  "path" : "/resources/languages/fr.luac",
+  "hexDigest" : "4fa3f9d293fde9c222b1213dc3843d4e1b9cc29a",
+  "children" : [ ]
+}, {
+  "path" : "/resources/languages/es.luac",
+  "hexDigest" : "a0052c90b8f29587db4b86a7abff157b785501f5",
+  "children" : [ ]
+}, {
+  "path" : "/resources/languages/it.luac",
+  "hexDigest" : "a2d26ab0f83b8ede30b6f878fb8f49b45bf5fe67",
+  "children" : [ ]
+}, {
+  "path" : "/resources/languages/de.luac",
+  "hexDigest" : "68add4c707a31adadd5f745f52ec131babf3f75f",
+  "children" : [ ]
+}, {
+  "path" : "/resources/languages/pt.luac",
+  "hexDigest" : "521e03d56fc78a8fb548d6637025967f7f3929e8",
+  "children" : [ ]
+}, {
+  "path" : "/resources/languages/ru.luac",
+  "hexDigest" : "fd77cf2e191561564050ee6902b0bc88ad92d3d7",
+  "children" : [ ]
+}, {
+  "path" : "/resources/languages/zh.luac",
+  "hexDigest" : "91e9f426cfeeb5b66d4099d53a85567e802e3934",
+  "children" : [ ]
+}, {
+  "path" : "/resources/languages/ja.luac",
+  "hexDigest" : "b2ed71ec06fc07a865cbd13d3b9cd1681f36da7e",
+  "children" : [ ]
+}, {
+  "path" : "/resources/languages/ko.luac",
+  "hexDigest" : "b92d2fa59cea2f3f083c629e312c5e8ea40469fd",
+  "children" : [ ]
+}, {
+  "path" : "/resources/languages/fa.luac",
+  "hexDigest" : "ec8f56af36441556e621f457d1ed8a66fd97fa1f",
+  "children" : [ ]
+}, {
+  "path" : "/saver/saver.luac",
+  "hexDigest" : "825ca07ea1fa33ec4a5db2b859a1a2ebc1c84bbe",
+  "children" : [ "/saver/storage.luac", "/saver/migrations.luac", "/saver/saver_internal.luac" ]
+}, {
+  "path" : "/saver/storage.luac",
+  "hexDigest" : "0829adccb3fe97435cdc80f1fb6cf56f40aab2af",
+  "children" : [ ]
+}, {
+  "path" : "/saver/migrations.luac",
+  "hexDigest" : "b988331585eb7342447523996abd2ad982cf5a55",
+  "children" : [ ]
+}, {
+  "path" : "/saver/saver_internal.luac",
+  "hexDigest" : "33e34865f17efe8b5614a30b80d62b6bf900ceef",
+  "children" : [ ]
+}, {
+  "path" : "/app/modules/assets/deferred_pack_loader.luac",
+  "hexDigest" : "363dc4ebc374c188578e057c126daf662887d476",
+  "children" : [ ]
+}, {
+  "path" : "/game/modules/deferred_assets/deferred_assets.luac",
+  "hexDigest" : "6b8ec7ecd73b81c6cc930de1ec3fa9774df2fd22",
+  "children" : [ ]
+}, {
+  "path" : "/game/modules/audio/music.luac",
+  "hexDigest" : "4424751ad5dd8ab14de1e4bc5effb8ddc0fe0aac",
+  "children" : [ "/common/audio/client.luac" ]
+}, {
+  "path" : "/game/modules/runtime/gameplay.luac",
+  "hexDigest" : "41135c54f83d83e9f53e806ec50c764e8b924af8",
+  "children" : [ "/common/addresses.luac", "/app/modules/platform/poki_service.luac", "/game/modules/player/player_input.luac" ]
+}, {
+  "path" : "/game/modules/player/player_input.luac",
+  "hexDigest" : "b0bbc0c3b394ea7c9b768651b9a1abec41d6d4f0",
+  "children" : [ "/common/input/mode.luac", "/common/input/axis.luac", "/common/input/held_actions.luac", "/common/input/pointer_guard.luac", "/game/modules/player/player_aim.luac", "/game/modules/mission/presentation/view_config.luac", "/common/input/actions.luac", "/common/addresses.luac", "/common/ad_state.luac" ]
+}, {
+  "path" : "/common/input/held_actions.luac",
+  "hexDigest" : "166161220ef0c3f2aa02e6fbb0ded613f0573246",
+  "children" : [ ]
+}, {
+  "path" : "/common/input/pointer_guard.luac",
+  "hexDigest" : "6a4a08753ec299feb72d3d779f06a8891c850fc6",
+  "children" : [ "/common/input/actions.luac" ]
+}, {
+  "path" : "/game/modules/player/player_aim.luac",
+  "hexDigest" : "769f43adb5759d83b4e695e22e2a7c343a8d0933",
+  "children" : [ "/common/math_utils.luac", "/game/modules/mission/presentation/view_config.luac" ]
+}, {
+  "path" : "/game/modules/mission/presentation/view_config.luac",
+  "hexDigest" : "1bc088821ac9b936b7b23fa37f6af1f168ce73a1",
+  "children" : [ "/game/modules/rules/config.luac" ]
+}, {
+  "path" : "/game/modules/runtime/app_state.luac",
+  "hexDigest" : "c3a87e86e627b70a139f758ff99a502cc20c9f27",
+  "children" : [ "/app/modules/platform/poki_service.luac", "/common/app_context.luac", "/game/modules/audio/music.luac", "/game/modules/runtime/gameplay.luac", "/common/addresses.luac", "/common/audio/client.luac" ]
+}, {
+  "path" : "/common/app_context.luac",
+  "hexDigest" : "e443a190fd890ec35caf1aa4b4a90e050f2d75ab",
+  "children" : [ "/event/event.luac" ]
+}, {
+  "path" : "/game/modules/runtime/tutorials.luac",
+  "hexDigest" : "f69ee49c1f0016a074d1242fa5f3a7bc7b8b1478",
+  "children" : [ "/game/modules/profile/progress.luac", "/common/time_controller.luac", "/common/addresses.luac", "/game/modules/runtime/gameplay.luac" ]
+}, {
+  "path" : "/common/time_controller.luac",
+  "hexDigest" : "c2ed3039f9e0403c7e69b0122d5d50aa53618a88",
+  "children" : [ "/common/math_utils.luac" ]
+}, {
+  "path" : "/game/modules/flow/screen_flow.luac",
+  "hexDigest" : "48811a29f08bd97447dd9125dcfe4bafba4ac482",
+  "children" : [ "/monarch/monarch.luac", "/app/modules/platform/poki_service.luac", "/game/modules/profile/progress.luac", "/common/addresses.luac", "/game/modules/runtime/gameplay.luac", "/game/modules/runtime/app_state.luac", "/game/modules/shop/shop_payload.luac", "/common/audio/client.luac" ]
+}, {
+  "path" : "/game/modules/shop/shop_payload.luac",
+  "hexDigest" : "ba96e92d81f310295412e8152b317c5c9f6ca148",
+  "children" : [ "/game/modules/profile/progress.luac" ]
+}, {
+  "path" : "/game/modules/shop/shop_flow.luac",
+  "hexDigest" : "f312c43651f6d35e24f88890557bca0babf98eaa",
+  "children" : [ "/game/modules/profile/progress.luac", "/common/addresses.luac", "/game/modules/runtime/app_state.luac", "/game/modules/shop/shop_payload.luac", "/game/modules/flow/rewarded.luac", "/common/audio/client.luac" ]
+}, {
+  "path" : "/game/modules/flow/rewarded.luac",
+  "hexDigest" : "e8218c6525bd8e2c09d1061f4c98b3e904705b66",
+  "children" : [ "/monarch/monarch.luac", "/app/modules/platform/poki_service.luac", "/game/modules/runtime/gameplay.luac", "/game/modules/runtime/app_state.luac", "/common/audio/client.luac" ]
+}, {
+  "path" : "/game/modules/flow/settings_flow.luac",
+  "hexDigest" : "1c7bec49d6a7a89acb8c35b791260913fafee84c",
+  "children" : [ "/game/modules/profile/progress.luac", "/game/modules/content/languages.luac", "/druid/druid.luac", "/common/addresses.luac", "/game/modules/runtime/app_state.luac", "/common/audio/client.luac" ]
+}, {
+  "path" : "/game/modules/flow/pause_flow.luac",
+  "hexDigest" : "00ef979d1eb1e487bd48350e96ae1b1247e74e27",
+  "children" : [ "/monarch/monarch.luac", "/app/modules/platform/poki_service.luac", "/common/addresses.luac", "/game/modules/runtime/gameplay.luac", "/game/modules/runtime/app_state.luac", "/common/audio/client.luac" ]
+}, {
+  "path" : "/game/modules/flow/session_flow.luac",
+  "hexDigest" : "e6838b03add4d6829ea091801826828c76523d35",
+  "children" : [ "/app/modules/platform/poki_service.luac", "/game/modules/profile/progress.luac", "/game/modules/flow/settings_flow.luac", "/common/addresses.luac", "/game/modules/runtime/gameplay.luac", "/game/modules/runtime/tutorials.luac", "/game/modules/runtime/app_state.luac", "/game/modules/flow/screen_flow.luac", "/common/audio/client.luac" ]
+}, {
+  "path" : "/game/modules/flow/result_flow.luac",
+  "hexDigest" : "cca84721e4d3e0cbfd53c530537e9361df4dfba1",
+  "children" : [ "/monarch/monarch.luac", "/app/modules/platform/poki_service.luac", "/game/modules/profile/progress.luac", "/common/addresses.luac", "/game/modules/runtime/gameplay.luac", "/game/modules/runtime/app_state.luac", "/game/modules/flow/pause_flow.luac", "/game/modules/flow/screen_flow.luac", "/game/modules/flow/rewarded.luac", "/common/audio/client.luac" ]
+}, {
+  "path" : "/game/objects/deferred_assets/deferred_assets.goc",
+  "hexDigest" : "721a2a83823087ee386663ffc22e32d270b5a351",
+  "children" : [ "/app/scripts/assets/pack_proxies.scriptc", "/_generated_8e8d2fb77d181819.collectionproxyc", "/_generated_acc07cd8146fb439.collectionproxyc", "/_generated_33c070a27c849d32.collectionproxyc", "/_generated_bd9a8d099529289.collectionproxyc" ]
+}, {
+  "path" : "/app/scripts/assets/pack_proxies.scriptc",
+  "hexDigest" : "4be7692c65745eb4172fef9e3fcb96b60e25fd87",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_8e8d2fb77d181819.collectionproxyc",
+  "hexDigest" : "c8bfd427126118bfe875bfd383034b706c1a1eee",
+  "nodeType" : "ExcludedCollectionProxy",
+  "children" : [ "/game/collections/fonts/lang_fa.collectionc" ]
+}, {
+  "path" : "/game/collections/fonts/lang_fa.collectionc",
+  "hexDigest" : "4a098ce108ec2c896e963e9f82bc0b945bff4624",
+  "nodeType" : "ExcludedCollection",
+  "children" : [ "/game/objects/fonts/lang_fa.goc" ]
+}, {
+  "path" : "/game/objects/fonts/lang_fa.goc",
+  "hexDigest" : "d8c44b7be55e4d7ccd911579b0fb27575417add6",
+  "children" : [ "/_generated_a1bf930120ff9f00.labelc" ]
+}, {
+  "path" : "/_generated_a1bf930120ff9f00.labelc",
+  "hexDigest" : "3aec98012af7c9b716183cda4eef979469c9d4f7",
+  "children" : [ "/assets/fonts/arabic.fontc", "/builtins/fonts/label-df.materialc" ]
+}, {
+  "path" : "/assets/fonts/arabic.fontc",
+  "hexDigest" : "3771658d9533460572952ca6a30e6c9604aedb6d",
+  "children" : [ "/builtins/fonts/font-df.materialc", "/_generated_NotoSansArabic-Regular_a3b951b037831e10.glyph_bankc" ]
+}, {
+  "path" : "/_generated_NotoSansArabic-Regular_a3b951b037831e10.glyph_bankc",
+  "hexDigest" : "c88404c34c1a9a5f37585dd619052340af9ec72e",
+  "children" : [ ]
+}, {
+  "path" : "/builtins/fonts/label-df.materialc",
+  "hexDigest" : "487226eb97f0ba30681265c8d7c09813b263fec4",
+  "children" : [ "/shader_6592067761991147028.spc" ]
+}, {
+  "path" : "/_generated_acc07cd8146fb439.collectionproxyc",
+  "hexDigest" : "8c01eb0a83bdf476e7e3a5f2d834a76a83ecd273",
+  "nodeType" : "ExcludedCollectionProxy",
+  "children" : [ "/game/collections/fonts/lang_cyrillic.collectionc" ]
+}, {
+  "path" : "/game/collections/fonts/lang_cyrillic.collectionc",
+  "hexDigest" : "9aa7d279d236d00ba7c0d53565443a98487b094e",
+  "nodeType" : "ExcludedCollection",
+  "children" : [ "/game/objects/fonts/lang_cyrillic.goc" ]
+}, {
+  "path" : "/game/objects/fonts/lang_cyrillic.goc",
+  "hexDigest" : "dd926a5aebcd394c736570bf2f9c6532911f4fc2",
+  "children" : [ "/_generated_79145695d998b9ff.labelc" ]
+}, {
+  "path" : "/_generated_79145695d998b9ff.labelc",
+  "hexDigest" : "d66c54465eb9a8ee6a5950cfd7936efc174566ef",
+  "children" : [ "/assets/fonts/cyrillic.fontc", "/builtins/fonts/label-df.materialc" ]
+}, {
+  "path" : "/assets/fonts/cyrillic.fontc",
+  "hexDigest" : "4705240505380d4d13115f420af27558fa88d070",
+  "children" : [ "/builtins/fonts/font-df.materialc", "/_generated_NotoSans-Cyrillic_3f7e3380e6244a80.glyph_bankc" ]
+}, {
+  "path" : "/_generated_NotoSans-Cyrillic_3f7e3380e6244a80.glyph_bankc",
+  "hexDigest" : "b22a059c66d25014bfa82dba4ef5b77d56ea21c3",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_33c070a27c849d32.collectionproxyc",
+  "hexDigest" : "38bf54b9547588182b31be0f8f56bb6b2aaefc9c",
+  "nodeType" : "ExcludedCollectionProxy",
+  "children" : [ "/game/collections/fonts/lang_cjk.collectionc" ]
+}, {
+  "path" : "/game/collections/fonts/lang_cjk.collectionc",
+  "hexDigest" : "a9b0312b06bf9ffd7176d70608655a7039d2f36f",
+  "nodeType" : "ExcludedCollection",
+  "children" : [ "/game/objects/fonts/lang_cjk.goc" ]
+}, {
+  "path" : "/game/objects/fonts/lang_cjk.goc",
+  "hexDigest" : "39d8475630a36e7c425e15e1e67313eb7b8f2c8d",
+  "children" : [ "/_generated_28f9157055940d12.labelc" ]
+}, {
+  "path" : "/_generated_28f9157055940d12.labelc",
+  "hexDigest" : "1a1057355973182f5f4bb22cd175542c7479a5e9",
+  "children" : [ "/assets/fonts/cjk.fontc", "/builtins/fonts/label-df.materialc" ]
+}, {
+  "path" : "/assets/fonts/cjk.fontc",
+  "hexDigest" : "07759781e0949d8f8599f766eb524c7ec5a0dfe0",
+  "children" : [ "/builtins/fonts/font-df.materialc", "/_generated_NotoSansCJK_84fc459b947c4c93.glyph_bankc" ]
+}, {
+  "path" : "/_generated_NotoSansCJK_84fc459b947c4c93.glyph_bankc",
+  "hexDigest" : "1c7c4a743a549e863a6c7126cf6b52834ff309c0",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_bd9a8d099529289.collectionproxyc",
+  "hexDigest" : "13e996fc5545ee78b99292cc0ae355f6b290ab22",
+  "nodeType" : "ExcludedCollectionProxy",
+  "children" : [ "/game/collections/deferred_audio/deferred_audio.collectionc" ]
+}, {
+  "path" : "/game/collections/deferred_audio/deferred_audio.collectionc",
+  "hexDigest" : "4afb7738b58a50cf13a25c0dc305aa434b074d4d",
+  "nodeType" : "ExcludedCollection",
+  "children" : [ "/game/objects/deferred_audio/audio.goc" ]
+}, {
+  "path" : "/game/objects/deferred_audio/audio.goc",
+  "hexDigest" : "905230bb110d392bcd9b3b5eed963dbc249449fb",
+  "children" : [ "/_generated_4aaa10422cbb78e2.soundc" ]
+}, {
+  "path" : "/_generated_4aaa10422cbb78e2.soundc",
+  "hexDigest" : "60c2ec61aaaaf17912262007d627d95f51a1d2f1",
+  "children" : [ "/assets/audio/cyberpunk city 2_compressed.oggc" ]
+}, {
+  "path" : "/assets/audio/cyberpunk city 2_compressed.oggc",
+  "hexDigest" : "94f84a88ef120cd7658ea26e647004ae9993eabe",
+  "children" : [ ]
+}, {
+  "path" : "/game/objects/fonts/fonts.goc",
+  "hexDigest" : "b579e368a8044d56dd4417d81c9c7ac9fa2753f7",
+  "children" : [ "/game/resources/gui/fonts/font_support.guic" ]
+}, {
+  "path" : "/game/resources/gui/fonts/font_support.guic",
+  "hexDigest" : "bf9d6f5c9fcd7b2304052427efc3fa7257285379",
+  "children" : [ "/game/scripts/fonts/font_support.gui_scriptc", "/assets/fonts/title.fontc", "/assets/fonts/body.fontc", "/builtins/materials/gui.materialc" ]
+}, {
+  "path" : "/game/scripts/fonts/font_support.gui_scriptc",
+  "hexDigest" : "c980ab8a9a6ebb043ca741ef72a1063f99e0fe68",
+  "children" : [ "/game/modules/content/languages.luac", "/lang/lang.luac" ]
+}, {
+  "path" : "/game/objects/audio/music.goc",
+  "hexDigest" : "a4744cf2b3f4290054423018ea661d34b3fcc1bb",
+  "children" : [ "/_generated_e6e287d02cb54c9e.soundc" ]
+}, {
+  "path" : "/_generated_e6e287d02cb54c9e.soundc",
+  "hexDigest" : "363849ad1df0e016f3735280e69b98a515a3e8ed",
+  "children" : [ "/assets/audio/cyber city 2-b_compressed.oggc" ]
+}, {
+  "path" : "/assets/audio/cyber city 2-b_compressed.oggc",
+  "hexDigest" : "f50226dbf7d70dc99475c9f1026957e040f99334",
+  "children" : [ ]
+}, {
+  "path" : "/game/objects/audio/sounds.goc",
+  "hexDigest" : "2e849034f72fb8de33c32fa76664b9ce93b4dae2",
+  "children" : [ "/_generated_6d9311cae834e8e9.soundc", "/_generated_ff7510bcdfb33f86.soundc", "/_generated_6d7dac412996c5a9.soundc", "/_generated_e08a4cc00e47b3b9.soundc", "/_generated_e32d6188a2bbf058.soundc", "/_generated_573fadce183f4cc3.soundc", "/_generated_a3355180ea76d84a.soundc", "/_generated_3acd34b2ccef60f7.soundc", "/_generated_ecfcebe21c28c21.soundc", "/_generated_c0248d607c317be3.soundc" ]
+}, {
+  "path" : "/_generated_6d9311cae834e8e9.soundc",
+  "hexDigest" : "531fabc8964f04b153ec7a5994bf50f4a79dd178",
+  "children" : [ "/assets/audio/laserSmall_000.oggc" ]
+}, {
+  "path" : "/assets/audio/laserSmall_000.oggc",
+  "hexDigest" : "00a09080ca47456c76181c5f4f454786b03392d5",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_ff7510bcdfb33f86.soundc",
+  "hexDigest" : "39aae70e169f5191c8e796d93591bae33fa41881",
+  "children" : [ "/assets/audio/laser3.oggc" ]
+}, {
+  "path" : "/assets/audio/laser3.oggc",
+  "hexDigest" : "aff648e481ba585337b4d94839c2d11f5f7fb000",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_6d7dac412996c5a9.soundc",
+  "hexDigest" : "c6b377d2f4d71ef1dc59fd05ab72a0c33d082b74",
+  "children" : [ "/assets/audio/forceField_000.oggc" ]
+}, {
+  "path" : "/assets/audio/forceField_000.oggc",
+  "hexDigest" : "60d17c9ddeca04073a33e0116345edb8011bfc72",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_e08a4cc00e47b3b9.soundc",
+  "hexDigest" : "226857e5d5695fe393e992531c7aca6f8a9b13ea",
+  "children" : [ "/assets/audio/thrusterFire_000_compressed.oggc" ]
+}, {
+  "path" : "/assets/audio/thrusterFire_000_compressed.oggc",
+  "hexDigest" : "445b15e526006f20705455acb91e10707f3c5696",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_e32d6188a2bbf058.soundc",
+  "hexDigest" : "801fa08df14a8a856c6392874fbcc2fd15eae8da",
+  "children" : [ "/assets/audio/explosionCrunch_001.oggc" ]
+}, {
+  "path" : "/assets/audio/explosionCrunch_001.oggc",
+  "hexDigest" : "f067ca1472d8c0a0a94769a8c17be285d5bcfb3c",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_573fadce183f4cc3.soundc",
+  "hexDigest" : "5fcf85f988852f1a42204e9d80d4291a549e2c39",
+  "children" : [ "/assets/audio/spaceTrash3_compressed.oggc" ]
+}, {
+  "path" : "/assets/audio/spaceTrash3_compressed.oggc",
+  "hexDigest" : "b3d204baa371767cee4ff5ac275835f10fcc5434",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_a3355180ea76d84a.soundc",
+  "hexDigest" : "acb43053eedf10f9fa4eaf157bd0c93c5bc84ec8",
+  "children" : [ "/assets/audio/powerUp4.oggc" ]
+}, {
+  "path" : "/assets/audio/powerUp4.oggc",
+  "hexDigest" : "f0e9b307deaf5e94587706fede70401ae4461c39",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_3acd34b2ccef60f7.soundc",
+  "hexDigest" : "775681066e52794c51ec54bc77a21f655bbf0b01",
+  "children" : [ "/assets/audio/powerUp6.oggc" ]
+}, {
+  "path" : "/assets/audio/powerUp6.oggc",
+  "hexDigest" : "2de0ca4d0d96729da6c68a1c2f7f912ac5398b7f",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_ecfcebe21c28c21.soundc",
+  "hexDigest" : "4b4bd76e4b56ad2807fc31b7fd3c84af05aecb55",
+  "children" : [ "/assets/audio/confirmation_002.oggc" ]
+}, {
+  "path" : "/assets/audio/confirmation_002.oggc",
+  "hexDigest" : "e94d6ebdfcde3dda870c3467fbeb850d9b40ec3c",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_c0248d607c317be3.soundc",
+  "hexDigest" : "c281874d5de6c649173dd07f33c41e2c79abe6dc",
+  "children" : [ "/assets/audio/question_004.oggc" ]
+}, {
+  "path" : "/assets/audio/question_004.oggc",
+  "hexDigest" : "6c89c26847f7eb5da273af02e786882014ac33cb",
+  "children" : [ ]
+}, {
+  "path" : "/game/objects/screens/gameplay_screen.goc",
+  "hexDigest" : "f226f6e7a159ee3bcffbc951d9f4f25ed97ea720",
+  "children" : [ "/monarch/screen_proxy.scriptc", "/_generated_da52aebc42540176.collectionproxyc" ]
+}, {
+  "path" : "/_generated_da52aebc42540176.collectionproxyc",
+  "hexDigest" : "17543e1dcefd3b1de10b8ad8064587888c467ff2",
+  "nodeType" : "CollectionProxy",
+  "children" : [ "/game/collections/mission/gameplay.collectionc" ]
+}, {
+  "path" : "/game/collections/mission/gameplay.collectionc",
+  "hexDigest" : "e677694e84b931e8f1162d172b48f1fb1af2c2b5",
+  "children" : [ "/game/objects/world/ambient_vfx.goc", "/game/objects/mission/camera/camera.goc", "/game/objects/mission/controller.goc", "/game/objects/player/player.goc", "/game/objects/world/sky.goc", "/game/objects/mission/ui.goc" ]
+}, {
+  "path" : "/game/objects/world/ambient_vfx.goc",
+  "hexDigest" : "e0832ae025dfdcfe85073146b94bfae0d37b6dd7",
+  "children" : [ "/game/resources/particlefx/star_streaks.particlefxc", "/game/scripts/mission/autoplay_particlefx.scriptc" ]
+}, {
+  "path" : "/game/resources/particlefx/star_streaks.particlefxc",
+  "hexDigest" : "13f95ede5cce06c8e5cc7e976aa6a7dd3e3aa6fd",
+  "children" : [ "/assets/atlases/vfx.a.texturesetc", "/render/particle_billboard.materialc" ]
+}, {
+  "path" : "/assets/atlases/vfx.a.texturesetc",
+  "hexDigest" : "c58aa0b68a9b1daa9ad9fca3cbb47a06fcfb3b12",
+  "children" : [ "/assets/atlases/vfx.texturec" ]
+}, {
+  "path" : "/assets/atlases/vfx.texturec",
+  "hexDigest" : "5521d07a84c0469a976d02d1abf1f830d9b71294",
+  "children" : [ ]
+}, {
+  "path" : "/render/particle_billboard.materialc",
+  "hexDigest" : "99824af59526a79dbcb06e93fe7737862ffe9057",
+  "children" : [ "/shader_-247083896060405146.spc" ]
+}, {
+  "path" : "/shader_-247083896060405146.spc",
+  "hexDigest" : "831c3abafd86286e86a1706b01ab30cffb2ba7ad",
+  "children" : [ ]
+}, {
+  "path" : "/game/scripts/mission/autoplay_particlefx.scriptc",
+  "hexDigest" : "45c4957f5188113bafb9661d939f7cf7c9fff32e",
+  "children" : [ ]
+}, {
+  "path" : "/game/objects/mission/camera/camera.goc",
+  "hexDigest" : "21104a8007ededafd7bd97a5cea3faf5bfd523dc",
+  "children" : [ "/game/scripts/mission/camera/camera.scriptc", "/_generated_ea6b2d81207aa139.camerac" ]
+}, {
+  "path" : "/game/scripts/mission/camera/camera.scriptc",
+  "hexDigest" : "2e212ee1b1ae4281bf29258dbc3ec18d02a96925",
+  "children" : [ "/common/addresses.luac", "/common/math_utils.luac", "/game/modules/mission/presentation/feedback_events.luac", "/game/modules/mission/presentation/view_config.luac" ]
+}, {
+  "path" : "/game/modules/mission/presentation/feedback_events.luac",
+  "hexDigest" : "a1dc2e6b2efcc98997859b9bc24ad217a680464a",
+  "children" : [ "/event/event.luac" ]
+}, {
+  "path" : "/_generated_ea6b2d81207aa139.camerac",
+  "hexDigest" : "845bbd0eadf10bbcae41daf3bd5f908f69752b72",
+  "children" : [ ]
+}, {
+  "path" : "/game/objects/mission/controller.goc",
+  "hexDigest" : "9ab8d37ad03c03892c77e7e0d8c5db941f92aaea",
+  "children" : [ "/game/scripts/mission/gameplay.scriptc", "/game/scripts/mission/audio/audio_reaction.scriptc", "/game/scripts/mission/vfx_reaction.scriptc", "/_generated_e14c145d92ca092e.factoryc", "/_generated_38c57a3d6f8a040.factoryc", "/_generated_10aabc97876e391a.factoryc", "/_generated_928c5655f8dd5bc1.factoryc", "/_generated_3c7341f36f074530.factoryc", "/_generated_237e90edaa8f15b0.factoryc", "/_generated_cc77113f2ce1521e.factoryc", "/_generated_fc6c02c568319fd0.factoryc" ]
+}, {
+  "path" : "/game/scripts/mission/gameplay.scriptc",
+  "hexDigest" : "dbf3b12a5eaf34bd2ee76a5f237ea973b14e2039",
+  "children" : [ "/common/addresses.luac", "/monarch/monarch.luac", "/game/modules/rules/mission_state.luac", "/game/modules/mission/combat_runtime.luac", "/game/modules/player/player_input.luac", "/game/modules/player/player_movement.luac", "/game/modules/mission/run_flow.luac", "/game/modules/mission/presentation/feedback_events.luac", "/game/modules/world/world_visuals.luac", "/game/modules/mission/presentation/view_config.luac", "/common/audio/client.luac", "/common/ad_state.luac" ]
+}, {
+  "path" : "/game/modules/rules/mission_state.luac",
+  "hexDigest" : "d5451aa409bacb12b19e50a2224264e34f5c6608",
+  "children" : [ "/common/math_utils.luac", "/game/modules/rules/config.luac", "/game/modules/rules/levels.luac", "/game/modules/rules/spawn_plan.luac" ]
+}, {
+  "path" : "/game/modules/rules/spawn_plan.luac",
+  "hexDigest" : "fabaca79527a37dd91f29111aad53b917961bafe",
+  "children" : [ "/common/math_utils.luac", "/game/modules/rules/config.luac", "/game/modules/rules/levels.luac" ]
+}, {
+  "path" : "/game/modules/mission/combat_runtime.luac",
+  "hexDigest" : "9cce6c5af94013cbf70493eef05d01b7392c1c66",
+  "children" : [ "/game/modules/rules/config.luac", "/game/modules/rules/mission_state.luac", "/game/modules/rules/combat_rules.luac", "/game/modules/mission/presentation/actor_view.luac", "/game/modules/mission/projectile/projectile_view.luac", "/game/modules/player/player_movement.luac", "/game/modules/player/player_input.luac", "/game/modules/mission/presentation/feedback_events.luac", "/game/modules/mission/presentation/view_config.luac", "/common/addresses.luac" ]
+}, {
+  "path" : "/game/modules/rules/combat_rules.luac",
+  "hexDigest" : "1bd8de3f59a4f56f41887e85f8f5bfa9a3f43164",
+  "children" : [ "/common/math_utils.luac", "/game/modules/rules/config.luac", "/game/modules/rules/mission_state.luac" ]
+}, {
+  "path" : "/game/modules/mission/presentation/actor_view.luac",
+  "hexDigest" : "d147fec78c0572caa3a52d03a822c458dc62a52a",
+  "children" : [ "/common/math_utils.luac", "/game/modules/rules/config.luac", "/game/modules/rules/combat_rules.luac", "/game/modules/mission/presentation/view_config.luac" ]
+}, {
+  "path" : "/game/modules/mission/projectile/projectile_view.luac",
+  "hexDigest" : "89ab9e13b23edd5a90b9e48ee65d648f5bdd5d8a",
+  "children" : [ "/game/modules/rules/config.luac", "/game/modules/mission/presentation/view_config.luac" ]
+}, {
+  "path" : "/game/modules/player/player_movement.luac",
+  "hexDigest" : "9b5658906dfc8b9bfc2f5924891536735994aec0",
+  "children" : [ "/common/math_utils.luac", "/game/modules/mission/presentation/view_config.luac" ]
+}, {
+  "path" : "/game/modules/mission/run_flow.luac",
+  "hexDigest" : "b49d8698b297ae515d726776ef3ae4448f667111",
+  "children" : [ "/game/modules/rules/config.luac", "/game/modules/rules/mission_state.luac", "/game/modules/rules/spawn_plan.luac", "/game/modules/mission/combat_runtime.luac", "/game/modules/player/player_input.luac", "/game/modules/player/player_movement.luac", "/game/modules/player/ship_visual.luac", "/game/modules/mission/presentation/feedback_events.luac", "/game/modules/mission/presentation/view_config.luac", "/common/addresses.luac" ]
+}, {
+  "path" : "/game/modules/player/ship_visual.luac",
+  "hexDigest" : "ddd5b67d15ed7b8e116fad1667cfd53d0375b21e",
+  "children" : [ ]
+}, {
+  "path" : "/game/modules/world/world_visuals.luac",
+  "hexDigest" : "dd27c659a29a138747090944055bbc14a3a1f560",
+  "children" : [ "/common/math_utils.luac", "/game/modules/rules/planet_variants.luac" ]
+}, {
+  "path" : "/game/modules/rules/planet_variants.luac",
+  "hexDigest" : "719c3e0b32987e2d795f5d0dc36f4ce47e494d90",
+  "children" : [ "/common/math_utils.luac" ]
+}, {
+  "path" : "/game/scripts/mission/audio/audio_reaction.scriptc",
+  "hexDigest" : "d93ca02b785b12ad2b48b99b99be51fe2ea8fbd5",
+  "children" : [ "/game/modules/mission/presentation/feedback_events.luac", "/common/audio/client.luac" ]
+}, {
+  "path" : "/game/scripts/mission/vfx_reaction.scriptc",
+  "hexDigest" : "76bc65889e179790c52be955939b84dbd072dc0b",
+  "children" : [ "/game/modules/mission/presentation/feedback_events.luac" ]
+}, {
+  "path" : "/_generated_e14c145d92ca092e.factoryc",
+  "hexDigest" : "66c02e2d718f38527368a503333049ae2bbec944",
+  "children" : [ "/game/objects/mission/asteroid/asteroid_1.goc" ]
+}, {
+  "path" : "/game/objects/mission/asteroid/asteroid_1.goc",
+  "hexDigest" : "d8adcd4ebfda1121f456213d96a0862ca0e14b05",
+  "children" : [ "/game/resources/models/asteroid/asteroid_1.modelc", "/game/resources/particlefx/explosion.particlefxc", "/_generated_638e565be51be0ad.collisionobjectc" ]
+}, {
+  "path" : "/game/resources/models/asteroid/asteroid_1.modelc",
+  "hexDigest" : "32836734db06bf0c04de88c9cdde66d4e66652d9",
+  "children" : [ "/game/resources/models/asteroid/asteroid_1.rigscenec", "/render/asteroid.materialc" ]
+}, {
+  "path" : "/game/resources/models/asteroid/asteroid_1.rigscenec",
+  "hexDigest" : "17a6c74a1d3e19dbd32dafe875a86a45de64fef9",
+  "children" : [ "/assets/models/asteroid_1.meshsetc" ]
+}, {
+  "path" : "/assets/models/asteroid_1.meshsetc",
+  "hexDigest" : "ef9ff4a973a8928bf44c04e72655884ce427f8fd",
+  "children" : [ ]
+}, {
+  "path" : "/render/asteroid.materialc",
+  "hexDigest" : "a0f83e0f879a5b27ea9141911afe02b06f09e293",
+  "children" : [ "/shader_-7719300369199277685.spc" ]
+}, {
+  "path" : "/shader_-7719300369199277685.spc",
+  "hexDigest" : "30be99a827ad902bb0a85dff5e40025ee2bdd908",
+  "children" : [ ]
+}, {
+  "path" : "/game/resources/particlefx/explosion.particlefxc",
+  "hexDigest" : "6382a2b0563f8b99835152c275f55e0eac1dc600",
+  "children" : [ "/assets/atlases/vfx.a.texturesetc", "/render/particle_billboard.materialc", "/assets/atlases/vfx.a.texturesetc", "/render/particle_billboard.materialc", "/assets/atlases/vfx.a.texturesetc", "/render/particle_billboard.materialc" ]
+}, {
+  "path" : "/_generated_638e565be51be0ad.collisionobjectc",
+  "hexDigest" : "4a559bf31f764be67d079068a9ef8d0633c06200",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_38c57a3d6f8a040.factoryc",
+  "hexDigest" : "27a96a30f46bd05bfc5ca5e3a756f5a716986b58",
+  "children" : [ "/game/objects/mission/asteroid/asteroid_2.goc" ]
+}, {
+  "path" : "/game/objects/mission/asteroid/asteroid_2.goc",
+  "hexDigest" : "71f7a2da8877b4dd7f1978d8d12e9299b26cb529",
+  "children" : [ "/game/resources/models/asteroid/asteroid_2.modelc", "/game/resources/particlefx/explosion.particlefxc", "/_generated_638e565be51be0ad.collisionobjectc" ]
+}, {
+  "path" : "/game/resources/models/asteroid/asteroid_2.modelc",
+  "hexDigest" : "e603a979bb2643debfec531307935f3311fb1b8d",
+  "children" : [ "/game/resources/models/asteroid/asteroid_2.rigscenec", "/render/asteroid.materialc" ]
+}, {
+  "path" : "/game/resources/models/asteroid/asteroid_2.rigscenec",
+  "hexDigest" : "d8a0f5be4ead6a67dbb2f0954e5a4e6504c51715",
+  "children" : [ "/assets/models/asteroid_2.meshsetc" ]
+}, {
+  "path" : "/assets/models/asteroid_2.meshsetc",
+  "hexDigest" : "3c04df20b1ae82b867b1bee123659d9067cdde52",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_10aabc97876e391a.factoryc",
+  "hexDigest" : "2417c9a56eae91be65e0bbb40ef9b65eea392529",
+  "children" : [ "/game/objects/mission/asteroid/asteroid_3.goc" ]
+}, {
+  "path" : "/game/objects/mission/asteroid/asteroid_3.goc",
+  "hexDigest" : "d4f6dca95ea7595586de161d0f1c295749df6f92",
+  "children" : [ "/game/resources/models/asteroid/asteroid_3.modelc", "/game/resources/particlefx/explosion.particlefxc", "/_generated_638e565be51be0ad.collisionobjectc" ]
+}, {
+  "path" : "/game/resources/models/asteroid/asteroid_3.modelc",
+  "hexDigest" : "04fd8801af3819d694f6826fadc12a60bb55afce",
+  "children" : [ "/game/resources/models/asteroid/asteroid_3.rigscenec", "/render/asteroid.materialc" ]
+}, {
+  "path" : "/game/resources/models/asteroid/asteroid_3.rigscenec",
+  "hexDigest" : "ce8bd4ef5e4caec78ce95064cdc08273c63de2e9",
+  "children" : [ "/assets/models/asteroid_3.meshsetc" ]
+}, {
+  "path" : "/assets/models/asteroid_3.meshsetc",
+  "hexDigest" : "ae087f83f6bd66268009b65fac8e0e47fa0295d7",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_928c5655f8dd5bc1.factoryc",
+  "hexDigest" : "e9a2573fa2a991a29779246e3b44e8a4f739d774",
+  "children" : [ "/game/objects/mission/asteroid/asteroid_4.goc" ]
+}, {
+  "path" : "/game/objects/mission/asteroid/asteroid_4.goc",
+  "hexDigest" : "845480feed5120476e276aec899bd4d8a58ccc4c",
+  "children" : [ "/game/resources/models/asteroid/asteroid_4.modelc", "/game/resources/particlefx/explosion.particlefxc", "/_generated_638e565be51be0ad.collisionobjectc" ]
+}, {
+  "path" : "/game/resources/models/asteroid/asteroid_4.modelc",
+  "hexDigest" : "ff4045d11f9b8493ca7f4feb9252cf5c14cd28c8",
+  "children" : [ "/game/resources/models/asteroid/asteroid_4.rigscenec", "/render/asteroid.materialc" ]
+}, {
+  "path" : "/game/resources/models/asteroid/asteroid_4.rigscenec",
+  "hexDigest" : "f852f95504143fefb248eb3aab972456e992dd69",
+  "children" : [ "/assets/models/asteroid_4.meshsetc" ]
+}, {
+  "path" : "/assets/models/asteroid_4.meshsetc",
+  "hexDigest" : "5806d4de6df8501a818e56f980ca05f55b60dced",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_3c7341f36f074530.factoryc",
+  "hexDigest" : "4bc0a292a4de83bb45166c049d6d0f125ad13924",
+  "children" : [ "/game/objects/mission/enemy/enemy.goc" ]
+}, {
+  "path" : "/game/objects/mission/enemy/enemy.goc",
+  "hexDigest" : "47a8f887aad8ee8a86002c50648b7ad649fd5087",
+  "children" : [ "/game/resources/models/enemy/enemy.modelc", "/game/resources/particlefx/explosion.particlefxc", "/_generated_be7bad3874619777.collisionobjectc", "/_generated_f691a8abae5710e.collisionobjectc" ]
+}, {
+  "path" : "/game/resources/models/enemy/enemy.modelc",
+  "hexDigest" : "4bf5f78086521f0039526cb042cf1c303a0f924d",
+  "children" : [ "/game/resources/models/enemy/enemy.rigscenec", "/render/enemy_metal.materialc", "/render/enemy_accent.materialc", "/render/enemy_dark.materialc", "/render/enemy_mid.materialc" ]
+}, {
+  "path" : "/game/resources/models/enemy/enemy.rigscenec",
+  "hexDigest" : "0c1aa35877b696c7e5c5a127ae81ea857fef114a",
+  "children" : [ "/assets/models/craft_speederB.meshsetc" ]
+}, {
+  "path" : "/assets/models/craft_speederB.meshsetc",
+  "hexDigest" : "be23944759c00f278a92a85740e15633b08faf6e",
+  "children" : [ ]
+}, {
+  "path" : "/render/enemy_metal.materialc",
+  "hexDigest" : "d3165a294c6a9823f9b16d519e9ac6b5f5529261",
+  "children" : [ "/shader_8542597290312993581.spc" ]
+}, {
+  "path" : "/shader_8542597290312993581.spc",
+  "hexDigest" : "7d1cbd027c227ce46758b1d2cc1ef6718daf1e5c",
+  "children" : [ ]
+}, {
+  "path" : "/render/enemy_accent.materialc",
+  "hexDigest" : "c0f0bfa88e0cb7fec049d7b0584bf2d3f69b55e4",
+  "children" : [ "/shader_8542597290312993581.spc" ]
+}, {
+  "path" : "/render/enemy_dark.materialc",
+  "hexDigest" : "b0a8d2e976a3220b06e2d772f7b0715ce97f1478",
+  "children" : [ "/shader_8542597290312993581.spc" ]
+}, {
+  "path" : "/render/enemy_mid.materialc",
+  "hexDigest" : "2cf7c5813fa25bd340abbfbe94a52551c3a507eb",
+  "children" : [ "/shader_8542597290312993581.spc" ]
+}, {
+  "path" : "/_generated_be7bad3874619777.collisionobjectc",
+  "hexDigest" : "1a7baa7fb00c8ddb5ee65eaca4f4f6fb4de39818",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_f691a8abae5710e.collisionobjectc",
+  "hexDigest" : "4b035c4bd655d65654c7b56a9c56de7b8e3b8911",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_237e90edaa8f15b0.factoryc",
+  "hexDigest" : "62c63c735d4b962b08a3e609db0ee2c01deb9abf",
+  "children" : [ "/game/objects/mission/ammo/ammo.goc" ]
+}, {
+  "path" : "/game/objects/mission/ammo/ammo.goc",
+  "hexDigest" : "b203b2eedd5f2a519efeaad6b156a04f7f0a40a3",
+  "children" : [ "/game/resources/models/ammo/ammo.modelc", "/game/resources/particlefx/ammo.particlefxc", "/game/resources/particlefx/pickup.particlefxc", "/game/scripts/mission/autoplay_particlefx.scriptc", "/_generated_3cb2544913b9ddb6.collisionobjectc" ]
+}, {
+  "path" : "/game/resources/models/ammo/ammo.modelc",
+  "hexDigest" : "d6436e7f002e230647b55b2b5e59e2bbb9f41898",
+  "children" : [ "/game/resources/models/ammo/ammo.rigscenec", "/render/model_metal.materialc", "/render/model_accent.materialc" ]
+}, {
+  "path" : "/game/resources/models/ammo/ammo.rigscenec",
+  "hexDigest" : "33be06dcf908103ef5f51e5aa40b3d0c6c2473d0",
+  "children" : [ "/assets/models/barrel.meshsetc" ]
+}, {
+  "path" : "/assets/models/barrel.meshsetc",
+  "hexDigest" : "340863fa3c80356a8cb3112450ab44c3e01a9a6c",
+  "children" : [ ]
+}, {
+  "path" : "/render/model_metal.materialc",
+  "hexDigest" : "45b7499d682c868d12684ec65c3550cbf37ea879",
+  "children" : [ "/shader_8542597290312993581.spc" ]
+}, {
+  "path" : "/render/model_accent.materialc",
+  "hexDigest" : "904d27f35cb3740ec3eedcdce3c5bcbb6a86c74e",
+  "children" : [ "/shader_8542597290312993581.spc" ]
+}, {
+  "path" : "/game/resources/particlefx/ammo.particlefxc",
+  "hexDigest" : "dd2ed86a9e02e03747538925d02fa07cada69d8c",
+  "children" : [ "/assets/atlases/vfx.a.texturesetc", "/render/particle_billboard.materialc" ]
+}, {
+  "path" : "/game/resources/particlefx/pickup.particlefxc",
+  "hexDigest" : "7fb5348c21d7e004edd706716e00e58be8aec907",
+  "children" : [ "/assets/atlases/vfx.a.texturesetc", "/render/particle_billboard.materialc", "/assets/atlases/vfx.a.texturesetc", "/render/particle_billboard.materialc" ]
+}, {
+  "path" : "/_generated_3cb2544913b9ddb6.collisionobjectc",
+  "hexDigest" : "36138fd0cc36e8cfa653a970b1a4aaadc535b42b",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_cc77113f2ce1521e.factoryc",
+  "hexDigest" : "8ca952dfe56d029e119153f8b61d5a930974d93f",
+  "children" : [ "/game/objects/mission/projectile/projectile.goc" ]
+}, {
+  "path" : "/game/objects/mission/projectile/projectile.goc",
+  "hexDigest" : "c8b869e6841ff03007519f047bd59b8481eb2d36",
+  "children" : [ "/game/resources/models/projectile/projectile.modelc", "/_generated_21f5b516a6203402.collisionobjectc" ]
+}, {
+  "path" : "/game/resources/models/projectile/projectile.modelc",
+  "hexDigest" : "f57c7f3a90e396516ad2a0521cf1567ca68f3677",
+  "children" : [ "/game/resources/models/projectile/projectile.rigscenec", "/render/projectile_unlit.materialc" ]
+}, {
+  "path" : "/game/resources/models/projectile/projectile.rigscenec",
+  "hexDigest" : "bde0977b08d451449a7f9ccbce26a414d48b48e8",
+  "children" : [ "/assets/models/projectile.meshsetc" ]
+}, {
+  "path" : "/assets/models/projectile.meshsetc",
+  "hexDigest" : "23260b227a7c28c5b7e289783d6e45f393ae2fb5",
+  "children" : [ ]
+}, {
+  "path" : "/render/projectile_unlit.materialc",
+  "hexDigest" : "8b12a766a2e0bca16a32b52caa09870001f082f8",
+  "children" : [ "/shader_-9082137832222297814.spc" ]
+}, {
+  "path" : "/shader_-9082137832222297814.spc",
+  "hexDigest" : "e5b4745685d3c94a7938d8af0e5cae047e901581",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_21f5b516a6203402.collisionobjectc",
+  "hexDigest" : "07347324d55930c1aabf66a9ec23d086290722e6",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_fc6c02c568319fd0.factoryc",
+  "hexDigest" : "c6995defee5976af8f6600a3e275dce18d0d9f9a",
+  "children" : [ "/game/objects/world/planet.goc" ]
+}, {
+  "path" : "/game/objects/world/planet.goc",
+  "hexDigest" : "6bfd31eec12f4a85c489816b29e2ff816f440347",
+  "children" : [ "/game/resources/models/world/planet.modelc" ]
+}, {
+  "path" : "/game/resources/models/world/planet.modelc",
+  "hexDigest" : "647d35ac04f1bfa1cc9952dcd19d30552eef30cb",
+  "children" : [ "/game/resources/models/world/planet.rigscenec", "/render/planet.materialc" ]
+}, {
+  "path" : "/game/resources/models/world/planet.rigscenec",
+  "hexDigest" : "2de28489d4e40eecf1728d68168dbfe6004fb77c",
+  "children" : [ "/builtins/assets/gltf/sphere.meshsetc" ]
+}, {
+  "path" : "/builtins/assets/gltf/sphere.meshsetc",
+  "hexDigest" : "7e3a9db1f82474f526a9aae8c57622f703178c6d",
+  "children" : [ ]
+}, {
+  "path" : "/render/planet.materialc",
+  "hexDigest" : "6522ebf4647f25e909cf4f0fb3b10af230bf86fb",
+  "children" : [ "/shader_-5265529059061489893.spc" ]
+}, {
+  "path" : "/shader_-5265529059061489893.spc",
+  "hexDigest" : "fc3fbdda212b8d08a0d74f0d0bddc2a70e9aa183",
+  "children" : [ ]
+}, {
+  "path" : "/game/objects/player/player.goc",
+  "hexDigest" : "bbe0ebf1eb7ac111b5a6944842218806bff87c68",
+  "children" : [ "/game/resources/particlefx/engine_trail.particlefxc", "/game/resources/particlefx/explosion.particlefxc", "/game/scripts/mission/autoplay_particlefx.scriptc", "/game/scripts/player/player_reaction.scriptc", "/game/resources/models/player/ship_speeder.modelc", "/game/resources/models/player/ship_interceptor.modelc", "/game/resources/models/player/ship_comet.modelc", "/_generated_b3aea6a2b5f9bb32.collisionobjectc", "/_generated_bd337749add10302.collisionobjectc", "/_generated_530ed6bf6ccfb786.collisionobjectc" ]
+}, {
+  "path" : "/game/resources/particlefx/engine_trail.particlefxc",
+  "hexDigest" : "f5a11f64f9036785833e50d7b2ade587d6ec4fc0",
+  "children" : [ "/assets/atlases/vfx.a.texturesetc", "/render/particle_billboard.materialc", "/assets/atlases/vfx.a.texturesetc", "/render/particle_billboard.materialc" ]
+}, {
+  "path" : "/game/scripts/player/player_reaction.scriptc",
+  "hexDigest" : "84ad56eb856cb1336411ffb0c2034883cfd2c1bd",
+  "children" : [ "/game/modules/mission/presentation/feedback_events.luac", "/game/modules/player/ship_visual.luac", "/game/modules/mission/presentation/view_config.luac" ]
+}, {
+  "path" : "/game/resources/models/player/ship_speeder.modelc",
+  "hexDigest" : "a65e60d9ba3894d2445dc425ef6e600ac028d748",
+  "children" : [ "/game/resources/models/player/ship_speeder.rigscenec", "/render/model_metal.materialc", "/render/model_accent.materialc", "/render/model_dark.materialc", "/render/model_mid.materialc" ]
+}, {
+  "path" : "/game/resources/models/player/ship_speeder.rigscenec",
+  "hexDigest" : "8d345ae8100af0e2a1d1ad48f3d00d996f794a34",
+  "children" : [ "/assets/models/craft_speederA.meshsetc" ]
+}, {
+  "path" : "/assets/models/craft_speederA.meshsetc",
+  "hexDigest" : "dd2c186b50ac6bc7bebe4b463fadcb4029996a35",
+  "children" : [ ]
+}, {
+  "path" : "/render/model_dark.materialc",
+  "hexDigest" : "d0b083617cc89f3813cb219d10f63551a1ffb441",
+  "children" : [ "/shader_8542597290312993581.spc" ]
+}, {
+  "path" : "/render/model_mid.materialc",
+  "hexDigest" : "167b6a6d1b9bfc0fdd577a9f3599bc16aadd2e2a",
+  "children" : [ "/shader_8542597290312993581.spc" ]
+}, {
+  "path" : "/game/resources/models/player/ship_interceptor.modelc",
+  "hexDigest" : "60155bcc7209978b864f72dac6232130da5f3e2b",
+  "children" : [ "/game/resources/models/player/ship_interceptor.rigscenec", "/render/model_metal.materialc", "/render/model_accent.materialc", "/render/model_dark.materialc", "/render/model_mid.materialc" ]
+}, {
+  "path" : "/game/resources/models/player/ship_interceptor.rigscenec",
+  "hexDigest" : "ffb1a646d22fe71cb90ce55a362fb5818a83ef15",
+  "children" : [ "/assets/models/craft_miner.meshsetc" ]
+}, {
+  "path" : "/assets/models/craft_miner.meshsetc",
+  "hexDigest" : "88cb47ef46a645e366a7f1da310de934e0b0392c",
+  "children" : [ ]
+}, {
+  "path" : "/game/resources/models/player/ship_comet.modelc",
+  "hexDigest" : "7cb68d725a7d70c5191fba1e4e28a231172a3171",
+  "children" : [ "/game/resources/models/player/ship_comet.rigscenec", "/render/model_metal.materialc", "/render/model_accent.materialc", "/render/model_dark.materialc", "/render/model_mid.materialc" ]
+}, {
+  "path" : "/game/resources/models/player/ship_comet.rigscenec",
+  "hexDigest" : "f3e53c47a29e94a199720d0a71cdf0ff4997670a",
+  "children" : [ "/assets/models/craft_racer.meshsetc" ]
+}, {
+  "path" : "/assets/models/craft_racer.meshsetc",
+  "hexDigest" : "f27f02a7613e5935d1fb716c122c6150bc3436c8",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_b3aea6a2b5f9bb32.collisionobjectc",
+  "hexDigest" : "47b4b956de1087df8debc879c26d800ce6663fbc",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_bd337749add10302.collisionobjectc",
+  "hexDigest" : "b0f56a0f1ffc1d0892007ad01a3f797e51902a6f",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_530ed6bf6ccfb786.collisionobjectc",
+  "hexDigest" : "58518c34f6f224e93b35ce37bbc0de39262626b3",
+  "children" : [ ]
+}, {
+  "path" : "/game/objects/world/sky.goc",
+  "hexDigest" : "1a56eefbdc66f69e0402a524231014fbbc022907",
+  "children" : [ "/game/resources/models/world/background.modelc", "/game/scripts/world/sky.scriptc" ]
+}, {
+  "path" : "/game/resources/models/world/background.modelc",
+  "hexDigest" : "91c81472fe1d296315c82f06b41b7968fd4d9d05",
+  "children" : [ "/game/resources/models/world/background.rigscenec", "/render/background.materialc" ]
+}, {
+  "path" : "/game/resources/models/world/background.rigscenec",
+  "hexDigest" : "8bd6bde2e6d4be4daa9e3c8a4c1f8399a2e49cbc",
+  "children" : [ "/builtins/assets/gltf/quad.meshsetc" ]
+}, {
+  "path" : "/builtins/assets/gltf/quad.meshsetc",
+  "hexDigest" : "9c083b1f3ceb5c71169c8133ca5ebb8c324e3f8c",
+  "children" : [ ]
+}, {
+  "path" : "/render/background.materialc",
+  "hexDigest" : "e1eeb898aeb908456f3d49145b10fc274bd6b684",
+  "children" : [ "/shader_2346680055777121130.spc" ]
+}, {
+  "path" : "/shader_2346680055777121130.spc",
+  "hexDigest" : "d8b0007068a2f872bc23dea3cbb2822b89c55a94",
+  "children" : [ ]
+}, {
+  "path" : "/game/scripts/world/sky.scriptc",
+  "hexDigest" : "3f0d9fbbd8ada902871b6fd2edc4b110c050ba5b",
+  "children" : [ ]
+}, {
+  "path" : "/game/objects/mission/ui.goc",
+  "hexDigest" : "5c0173fc4cb9f9549a31f03402da3504b3bda42b",
+  "children" : [ "/game/resources/gui/mission/hud.guic" ]
+}, {
+  "path" : "/game/resources/gui/mission/hud.guic",
+  "hexDigest" : "36d96fac1bcfdee650c70fb61dd7e2a4c10df06f",
+  "children" : [ "/game/scripts/mission/hud.gui_scriptc", "/assets/fonts/title.fontc", "/assets/fonts/body.fontc", "/assets/atlases/ui.a.texturesetc", "/builtins/materials/gui.materialc" ]
+}, {
+  "path" : "/game/scripts/mission/hud.gui_scriptc",
+  "hexDigest" : "6459802b6171237add3552870cc738b29253b601",
+  "children" : [ "/common/ad_state.luac", "/common/addresses.luac", "/game/modules/player/player_input.luac", "/druid/druid.luac", "/monarch/monarch.luac", "/ui/screen_transitions.luac", "/lang/lang.luac", "/ui/templates/button.luac", "/game/modules/ui/mission/meter.luac", "/game/modules/ui/mission/objective_panel.luac", "/ui/colors.luac", "/common/input/actions.luac", "/ui/screen_input.luac", "/ui/touch_controls.luac", "/game/modules/mission/presentation/feedback_events.luac" ]
+}, {
+  "path" : "/game/modules/ui/mission/meter.luac",
+  "hexDigest" : "c1c2e7441563ef139e3e1a09d42b0a3e3298ab69",
+  "children" : [ "/ui/templates/stat.luac", "/ui/templates/bar.luac" ]
+}, {
+  "path" : "/ui/templates/stat.luac",
+  "hexDigest" : "41b3c459e158db4bbf61c7a924d796e430430ad3",
+  "children" : [ "/ui/colors.luac", "/common/math_utils.luac" ]
+}, {
+  "path" : "/ui/templates/bar.luac",
+  "hexDigest" : "948090571bb9b12937100a1a8f6e8eaba470e577",
+  "children" : [ "/ui/colors.luac" ]
+}, {
+  "path" : "/game/modules/ui/mission/objective_panel.luac",
+  "hexDigest" : "d19afba300d4d2641a82fc00dc0226be0a110e44",
+  "children" : [ "/ui/templates/stat.luac", "/ui/templates/bar.luac" ]
+}, {
+  "path" : "/ui/touch_controls.luac",
+  "hexDigest" : "7229f4f987bfcd8f2c70c518f6d052d8515984fc",
+  "children" : [ "/common/math_utils.luac", "/common/input/actions.luac" ]
+}, {
+  "path" : "/learn/poki_guide.goc",
+  "hexDigest" : "c77d8f57e6e12d6174862e79282dff8657d18043",
+  "children" : [ "/learn/overlay.guic", "/learn/host.scriptc" ]
+}, {
+  "path" : "/learn/overlay.guic",
+  "hexDigest" : "dba8ca89a086d4a24b0bb0f58c7f11f8aca2850e",
+  "children" : [ "/learn/overlay.gui_scriptc", "/learn/guide_body.fontc", "/assets/atlases/ui.a.texturesetc", "/builtins/materials/gui.materialc" ]
+}, {
+  "path" : "/learn/overlay.gui_scriptc",
+  "hexDigest" : "436fe1aff38e9692fe6f99f1901a88168ebf7387",
+  "children" : [ "/monarch/monarch.luac", "/druid/druid.luac", "/ui/screen_input.luac", "/common/input/actions.luac", "/learn/overlay.luac" ]
+}, {
+  "path" : "/learn/overlay.luac",
+  "hexDigest" : "8858dfd8d7c058cd58ba4b42785971f69766a8fd",
+  "children" : [ "/learn/tips.luac" ]
+}, {
+  "path" : "/learn/tips.luac",
+  "hexDigest" : "e7d8579e90fcfd17299423bccf826e878b9fc51b",
+  "children" : [ ]
+}, {
+  "path" : "/learn/guide_body.fontc",
+  "hexDigest" : "0f6f78357891c4428a993945b0c193e6f21aa77f",
+  "children" : [ "/builtins/fonts/font-df.materialc", "/_generated_Oxanium-SemiBold_a1233d3a5b9e7502.glyph_bankc" ]
+}, {
+  "path" : "/_generated_Oxanium-SemiBold_a1233d3a5b9e7502.glyph_bankc",
+  "hexDigest" : "2d3be93f70a18b473ccc88e297d582183236b444",
+  "children" : [ ]
+}, {
+  "path" : "/learn/host.scriptc",
+  "hexDigest" : "6a2922275978b676832f6d49bfeff9dcfb0a514c",
+  "children" : [ "/common/app_context.luac", "/learn/flow.luac", "/learn/tips.luac", "/monarch/monarch.luac" ]
+}, {
+  "path" : "/learn/flow.luac",
+  "hexDigest" : "7ab1bb7c1a7bbe935b6e8b7a5710c4db3fa8222e",
+  "children" : [ "/monarch/monarch.luac", "/learn/tips.luac" ]
+}, {
+  "path" : "/learn/popup_screen.goc",
+  "hexDigest" : "a86a4fa70fefebb9a0d3160f035048ab11e881e9",
+  "children" : [ "/monarch/screen_proxy.scriptc", "/_generated_5ec492f891a1fbb9.collectionproxyc" ]
+}, {
+  "path" : "/_generated_5ec492f891a1fbb9.collectionproxyc",
+  "hexDigest" : "9183a16a01efc8b15a2170bf7ae9e250902bd329",
+  "nodeType" : "CollectionProxy",
+  "children" : [ "/learn/popup.collectionc" ]
+}, {
+  "path" : "/learn/popup.collectionc",
+  "hexDigest" : "fe19519803909e5bc57653bb13d47352f33f7433",
+  "children" : [ "/learn/popup.goc" ]
+}, {
+  "path" : "/learn/popup.goc",
+  "hexDigest" : "dbf00deea7bc3a7bfdaf695620ea15ac820c408d",
+  "children" : [ "/learn/popup.guic" ]
+}, {
+  "path" : "/learn/popup.guic",
+  "hexDigest" : "5d9b7371ac81fd2c26f296460ae6527db1c99540",
+  "children" : [ "/learn/popup.gui_scriptc", "/learn/guide_title.fontc", "/learn/guide_body.fontc", "/assets/atlases/ui.a.texturesetc", "/builtins/materials/gui.materialc" ]
+}, {
+  "path" : "/learn/popup.gui_scriptc",
+  "hexDigest" : "4f1f9edf5074e99c46c4e801417f1eeab039422b",
+  "children" : [ "/learn/tips.luac", "/ui/popup.luac", "/ui/templates/button.luac", "/ui/templates/selector.luac", "/common/input/actions.luac", "/common/audio/client.luac", "/ui/colors.luac", "/ui/screen_input.luac", "/common/input/axis.luac" ]
+}, {
+  "path" : "/ui/templates/selector.luac",
+  "hexDigest" : "89b828de608a26b4dc4f16d4e83b083d5b08b742",
+  "children" : [ "/ui/templates/button.luac" ]
+}, {
+  "path" : "/learn/guide_title.fontc",
+  "hexDigest" : "d064e142a7d5a0178e83618e22a79a295063e7b4",
+  "children" : [ "/builtins/fonts/font-df.materialc", "/_generated_Oxanium-SemiBold_75ef9cd34a215e7a.glyph_bankc" ]
+}, {
+  "path" : "/_generated_Oxanium-SemiBold_75ef9cd34a215e7a.glyph_bankc",
+  "hexDigest" : "e00af149130026d9bbca32d0a27096e05401a2bb",
+  "children" : [ ]
+}, {
+  "path" : "/game/objects/screens/mothership_screen.goc",
+  "hexDigest" : "7a7ab02d6964920275a2f652188b680f696d38dd",
+  "children" : [ "/monarch/screen_proxy.scriptc", "/_generated_939d92682cc2097.collectionproxyc" ]
+}, {
+  "path" : "/_generated_939d92682cc2097.collectionproxyc",
+  "hexDigest" : "85795a141bbba6c35900f7f1a8a1c86daae73232",
+  "nodeType" : "CollectionProxy",
+  "children" : [ "/game/collections/screens/shop/shop.collectionc" ]
+}, {
+  "path" : "/game/collections/screens/shop/shop.collectionc",
+  "hexDigest" : "d5f33c1a7dc82781a5ce1661c45030dad18e11a8",
+  "children" : [ "/game/objects/shop/camera.goc", "/game/objects/shop/controller.goc", "/game/objects/player/player.goc", "/game/objects/world/sky.goc", "/game/objects/shop/ui.goc" ]
+}, {
+  "path" : "/game/objects/shop/camera.goc",
+  "hexDigest" : "fe003e4b9ba8c9d4958691d32aac52d5c1626a97",
+  "children" : [ "/game/scripts/shop/camera.scriptc", "/_generated_98b59eceead1e0.camerac" ]
+}, {
+  "path" : "/game/scripts/shop/camera.scriptc",
+  "hexDigest" : "e27d24ef5e2db136882fe1766ef4eaafe11f89b8",
+  "children" : [ ]
+}, {
+  "path" : "/_generated_98b59eceead1e0.camerac",
+  "hexDigest" : "518ecebf1ab75b061411af6cf66d9c9910a9e889",
+  "children" : [ ]
+}, {
+  "path" : "/game/objects/shop/controller.goc",
+  "hexDigest" : "c65b8d77f62d9b4bab71df2d13c5468ef5a26eb4",
+  "children" : [ "/game/scripts/shop/mothership.scriptc" ]
+}, {
+  "path" : "/game/scripts/shop/mothership.scriptc",
+  "hexDigest" : "48b4c5c9f0bded25c5fa2a0c7bb18c1d2aa99236",
+  "children" : [ "/common/addresses.luac", "/monarch/monarch.luac", "/game/modules/player/ship_visual.luac" ]
+}, {
+  "path" : "/game/objects/shop/ui.goc",
+  "hexDigest" : "e901b90919b674651d8734fc15b8cf08a841722e",
+  "children" : [ "/game/resources/gui/screens/mothership.guic" ]
+}, {
+  "path" : "/game/resources/gui/screens/mothership.guic",
+  "hexDigest" : "3c78d6c6e69a572dfb31ce928d2d4e30a87a3a79",
+  "children" : [ "/game/scripts/shop/mothership.gui_scriptc", "/assets/fonts/title.fontc", "/assets/fonts/body.fontc", "/assets/atlases/ui.a.texturesetc", "/builtins/materials/gui.materialc" ]
+}, {
+  "path" : "/game/scripts/shop/mothership.gui_scriptc",
+  "hexDigest" : "00501de4aa69f5f5f8498cf0f2d0cb819b4352cb",
+  "children" : [ "/common/addresses.luac", "/druid/druid.luac", "/monarch/monarch.luac", "/ui/screen_transitions.luac", "/lang/lang.luac", "/ui/templates/button.luac", "/ui/templates/selector.luac", "/ui/templates/upgrade.luac", "/ui/colors.luac", "/common/input/actions.luac", "/ui/screen_input.luac", "/common/input/axis.luac", "/common/audio/client.luac", "/ui/focus.luac", "/game/modules/shop/shop_offer.luac", "/game/modules/shop/shop_focus.luac", "/game/modules/shop/shop_navigation.luac" ]
+}, {
+  "path" : "/ui/templates/upgrade.luac",
+  "hexDigest" : "b58b62c5d855a1003c60163e723c844b24cf52cd",
+  "children" : [ "/ui/templates/button.luac" ]
+}, {
+  "path" : "/ui/focus.luac",
+  "hexDigest" : "6607aa4ae5876053e14a8e5278e46e5be5b3c83d",
+  "children" : [ "/ui/templates/button.luac" ]
+}, {
+  "path" : "/game/modules/shop/shop_offer.luac",
+  "hexDigest" : "bcf0e143389965f8e1f1d8aea6255680a9546768",
+  "children" : [ ]
+}, {
+  "path" : "/game/modules/shop/shop_focus.luac",
+  "hexDigest" : "7a5c214537f2b68fa4958574f745b6e221102d56",
+  "children" : [ "/common/math_utils.luac", "/game/modules/rules/config.luac" ]
+}, {
+  "path" : "/game/modules/shop/shop_navigation.luac",
+  "hexDigest" : "da0ecaee1ef715569ddf1e35da0701334255793e",
+  "children" : [ "/common/input/actions.luac", "/common/input/axis.luac" ]
+}, {
+  "path" : "/game/objects/screens/popups/pause_popup_screen.goc",
+  "hexDigest" : "9661412fb0cffb31ddb6ebbe1a298ca67fc9fc0a",
+  "children" : [ "/monarch/screen_proxy.scriptc", "/_generated_ce042dcd5628595d.collectionproxyc" ]
+}, {
+  "path" : "/_generated_ce042dcd5628595d.collectionproxyc",
+  "hexDigest" : "4b6fa166c6eb27c33926db5e844cda04af6759bf",
+  "nodeType" : "CollectionProxy",
+  "children" : [ "/game/collections/screens/popups/pause.collectionc" ]
+}, {
+  "path" : "/game/collections/screens/popups/pause.collectionc",
+  "hexDigest" : "bc43482d206f6f6f60ce5593f2cc074cd4daa0f4",
+  "children" : [ "/game/objects/screens/popups/pause.goc" ]
+}, {
+  "path" : "/game/objects/screens/popups/pause.goc",
+  "hexDigest" : "7802cc4165514794b56da8635fedb30d1a4082fb",
+  "children" : [ "/game/resources/gui/screens/popups/pause.guic" ]
+}, {
+  "path" : "/game/resources/gui/screens/popups/pause.guic",
+  "hexDigest" : "3c10f4820f26e1094c7a0be2be29f6f149d02eca",
+  "children" : [ "/game/scripts/screens/popups/pause.gui_scriptc", "/assets/fonts/title.fontc", "/assets/fonts/body.fontc", "/assets/atlases/ui.a.texturesetc", "/builtins/materials/gui.materialc" ]
+}, {
+  "path" : "/game/scripts/screens/popups/pause.gui_scriptc",
+  "hexDigest" : "f1f99eba200c6ca481aa01181c7dfda1cabdcd97",
+  "children" : [ "/common/addresses.luac", "/common/math_utils.luac", "/ui/templates/button.luac", "/ui/templates/selector.luac", "/common/input/actions.luac", "/ui/colors.luac", "/ui/popup.luac", "/ui/screen_input.luac", "/common/input/axis.luac", "/common/audio/client.luac", "/ui/focus.luac", "/game/modules/content/languages.luac" ]
+}, {
+  "path" : "/game/objects/screens/popups/reward_confirm_popup_screen.goc",
+  "hexDigest" : "e34d7f13529be955fa28177d449026faf90ba493",
+  "children" : [ "/monarch/screen_proxy.scriptc", "/_generated_8ac269379f3b5269.collectionproxyc" ]
+}, {
+  "path" : "/_generated_8ac269379f3b5269.collectionproxyc",
+  "hexDigest" : "7d006e2d8f2b946efec742b66a858be445d213e2",
+  "nodeType" : "CollectionProxy",
+  "children" : [ "/game/collections/screens/popups/reward_confirm.collectionc" ]
+}, {
+  "path" : "/game/collections/screens/popups/reward_confirm.collectionc",
+  "hexDigest" : "bf2caa3f5fcefaddc016c45f2debd48941c550de",
+  "children" : [ "/game/objects/screens/popups/reward_confirm.goc" ]
+}, {
+  "path" : "/game/objects/screens/popups/reward_confirm.goc",
+  "hexDigest" : "4ff3c479e51bb9cd3ff738ce5a2dda1986ac4e1c",
+  "children" : [ "/game/resources/gui/screens/popups/reward_confirm.guic" ]
+}, {
+  "path" : "/game/resources/gui/screens/popups/reward_confirm.guic",
+  "hexDigest" : "5b3b7c76321ac6a23a887486a423281067aebee8",
+  "children" : [ "/game/scripts/screens/popups/reward_confirm.gui_scriptc", "/assets/fonts/title.fontc", "/assets/fonts/body.fontc", "/assets/atlases/ui.a.texturesetc", "/builtins/materials/gui.materialc" ]
+}, {
+  "path" : "/game/scripts/screens/popups/reward_confirm.gui_scriptc",
+  "hexDigest" : "89a709c4ee032d8773e8cf5e90c87826725a2e08",
+  "children" : [ "/common/addresses.luac", "/ui/popup.luac" ]
+}, {
+  "path" : "/app/objects/screens.goc",
+  "hexDigest" : "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+  "children" : [ ]
+}, {
+  "path" : "/game/objects/screens/popups/result_popup_screen.goc",
+  "hexDigest" : "c25e230a22ca201f73691b115420606c45edbb7d",
+  "children" : [ "/monarch/screen_proxy.scriptc", "/_generated_709e9a5f03868fba.collectionproxyc" ]
+}, {
+  "path" : "/_generated_709e9a5f03868fba.collectionproxyc",
+  "hexDigest" : "f3735389a118ad227ca032d7d19eb2f2c5769196",
+  "nodeType" : "CollectionProxy",
+  "children" : [ "/game/collections/screens/popups/result.collectionc" ]
+}, {
+  "path" : "/game/collections/screens/popups/result.collectionc",
+  "hexDigest" : "8d091a6d35ff357fe9a87a8e5ddfc55ce015c93a",
+  "children" : [ "/game/objects/screens/popups/result.goc" ]
+}, {
+  "path" : "/game/objects/screens/popups/result.goc",
+  "hexDigest" : "bba8202d8709964805d366b8804eeb539450ea01",
+  "children" : [ "/game/resources/gui/screens/popups/result.guic" ]
+}, {
+  "path" : "/game/resources/gui/screens/popups/result.guic",
+  "hexDigest" : "5d07bf488da6e0f7b8892636ceb845577643969f",
+  "children" : [ "/game/scripts/screens/popups/result.gui_scriptc", "/assets/fonts/title.fontc", "/assets/fonts/body.fontc", "/assets/atlases/ui.a.texturesetc", "/builtins/materials/gui.materialc", "/game/resources/particlefx/confetti.particlefxc" ]
+}, {
+  "path" : "/game/scripts/screens/popups/result.gui_scriptc",
+  "hexDigest" : "7a50f0cfd318664a7cada95c7ddea43466b400e3",
+  "children" : [ "/common/addresses.luac", "/monarch/monarch.luac", "/ui/templates/button.luac", "/ui/colors.luac", "/common/input/actions.luac", "/ui/popup.luac", "/ui/screen_input.luac" ]
+}, {
+  "path" : "/game/resources/particlefx/confetti.particlefxc",
+  "hexDigest" : "918f9dcd29156afed66064e3feba1fe62b0978bb",
+  "children" : [ "/assets/atlases/vfx.a.texturesetc", "/render/particle_billboard.materialc", "/assets/atlases/vfx.a.texturesetc", "/render/particle_billboard.materialc", "/assets/atlases/vfx.a.texturesetc", "/render/particle_billboard.materialc", "/assets/atlases/vfx.a.texturesetc", "/render/particle_billboard.materialc", "/assets/atlases/vfx.a.texturesetc", "/render/particle_billboard.materialc", "/assets/atlases/vfx.a.texturesetc", "/render/particle_billboard.materialc" ]
+}, {
+  "path" : "/game/objects/screens/popups/skin_reward_popup_screen.goc",
+  "hexDigest" : "3f21a5f07c39a43da45046f60c4b6fab89a3b0b4",
+  "children" : [ "/monarch/screen_proxy.scriptc", "/_generated_584dc7399b00413b.collectionproxyc" ]
+}, {
+  "path" : "/_generated_584dc7399b00413b.collectionproxyc",
+  "hexDigest" : "97ca51a1c82f636ef6b4ef6e91586ac0a5cf6e2d",
+  "nodeType" : "CollectionProxy",
+  "children" : [ "/game/collections/screens/popups/skin_reward.collectionc" ]
+}, {
+  "path" : "/game/collections/screens/popups/skin_reward.collectionc",
+  "hexDigest" : "35b08f0010b319f0ed457753b0c13ec904104f8c",
+  "children" : [ "/game/objects/screens/popups/skin_reward.goc" ]
+}, {
+  "path" : "/game/objects/screens/popups/skin_reward.goc",
+  "hexDigest" : "de0ffd3ab246d9ebe380e11482f8d86f68e8211a",
+  "children" : [ "/game/resources/gui/screens/popups/reward_confirm.guic" ]
+}, {
+  "path" : "/render/starbreaker.renderc",
+  "hexDigest" : "7ecf7a9e127ddb3b0ec77c18f3d0fd532fb145b5",
+  "children" : [ "/render/starbreaker.render_scriptc" ]
+}, {
+  "path" : "/render/starbreaker.render_scriptc",
+  "hexDigest" : "5c2a722382db63b1e4cbb1f8d7485b759a6219fa",
+  "children" : [ ]
+}, {
+  "path" : "/input/game.input_bindingc",
+  "hexDigest" : "e0ba6bbb00287cb714129dd6c045d02a54f7246c",
+  "children" : [ ]
+}, {
+  "path" : "/builtins/input/default.gamepadsc",
+  "hexDigest" : "2e53741aa7c7cd588b25b758a0461d0eb8bd0ba2",
+  "children" : [ ]
+}, {
+  "path" : "/resources/starbreaker_display_profiles.display_profilesc",
+  "hexDigest" : "70d82747d10ee8e65f912afa79794d64064636ae",
+  "children" : [ ]
+} ]

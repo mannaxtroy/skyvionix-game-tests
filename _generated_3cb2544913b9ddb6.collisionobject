@@ -1,0 +1,19 @@
+type: COLLISION_OBJECT_TYPE_TRIGGER
+mass: 0.0
+friction: 0.0
+restitution: 0.0
+group: "pickup"
+mask: "player"
+embedded_collision_shape {
+  shapes {
+    shape_type: TYPE_SPHERE
+    position {
+    }
+    rotation {
+    }
+    index: 0
+    count: 1
+    id: "pickup"
+  }
+  data: 1.5
+}

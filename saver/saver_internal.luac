@@ -1,0 +1,557 @@
+
+åJ
+ÇJlocal M = {}
+
+
+local EMPTY_FUNCTION = function(_, message, context) end
+
+
+M.empty_logger = {
+	trace = EMPTY_FUNCTION,
+	debug = EMPTY_FUNCTION,
+	info = EMPTY_FUNCTION,
+	warn = EMPTY_FUNCTION,
+	error = EMPTY_FUNCTION,
+}
+
+
+M.logger = {
+	trace = EMPTY_FUNCTION,
+	debug = EMPTY_FUNCTION,
+	info = EMPTY_FUNCTION,
+	warn = EMPTY_FUNCTION,
+	error = function(_, message, context)
+		pprint(message, context)
+	end,
+}
+
+
+
+M.GAME_STATE = nil
+
+M.LUA_REQUIRE_AS_STRING = sys.get_config_int("saver.lua_require_as_string", 0) == 1
+
+
+M.state = nil
+
+
+M.FORMAT = {
+	JSON = "json",
+	LUA = "lua",
+	SERIALIZED = "serialized", 
+}
+
+function M.reset_state()
+	M.state = {
+		storage = {},
+		version = 0,
+		last_game_version = "",
+		migration_version = 0,
+	}
+end
+
+
+M.reset_state()
+
+
+
+
+
+function M.split(s, sep)
+	sep = sep or "%s"
+	local t = {}
+	local i = 1
+	for str in string.gmatch(s, "([^" .. sep .. "]+)") do
+		t[i] = str
+		i = i + 1
+	end
+	return t
+end
+
+
+
+
+
+
+function M.json_encode(data)
+	local encoded_data = json.encode(data)
+	if encoded_data then
+		return encoded_data
+	end
+
+	M.logger:error("Failed to encode the data to JSON", data)
+	return nil
+end
+
+
+
+
+function M.parse_game_version(version)
+	local sMajor, sMinor, sPatch, sPrereleaseAndBuild = version:match("^(%d+)%.?(%d*)%.?(%d*)(.-)$")
+	assert(type(sMajor) == 'string', ("Could not extract version number(s) from %q"):format(version))
+
+	local major, minor, patch = tonumber(sMajor), tonumber(sMinor), tonumber(sPatch)
+	return major * 10000 + (minor or 0) * 100 + (patch or 0)
+end
+
+
+
+
+
+function M.detect_format(filepath)
+	if filepath:sub(-5) == ".json" then
+		return M.FORMAT.JSON
+	elseif filepath:sub(-4) == ".lua" then
+		return M.FORMAT.LUA
+	else
+		return M.FORMAT.SERIALIZED
+	end
+end
+
+
+
+
+
+
+function M.save_json(data, filepath)
+	local file = io.open(filepath, "wb")
+	if not file then
+		M.logger:error("Can't open file for writing", filepath)
+		return false
+	end
+
+	file:write(M.json_encode(data))
+	file:close()
+	return true
+end
+
+
+
+
+
+function M.load_json(filepath)
+	local file = io.open(filepath)
+	if not file then
+		M.logger:debug("JSON file does not exist", filepath)
+		return nil
+	end
+
+	local file_data = file:read("*all")
+	file:close()
+
+	if not file_data then
+		M.logger:error("Empty JSON file", filepath)
+		return nil
+	end
+
+	local is_ok, result_or_error = pcall(json.decode, file_data)
+	if not is_ok then
+		M.logger:error("Can't parse the JSON file", result_or_error)
+		return nil
+	end
+
+	return result_or_error
+end
+
+
+
+
+
+
+function M.save_lua(data, filepath)
+	local file = io.open(filepath, "wb")
+	if not file then
+		M.logger:error("Can't open file for writing", filepath)
+		return false
+	end
+
+	local filedata = "return " .. M.table_to_lua_string(data)
+	file:write(filedata)
+	file:close()
+	return true
+end
+
+
+
+
+
+function M.load_lua(filepath)
+	local file = io.open(filepath)
+	if not file then
+		M.logger:debug("Lua file does not exist", filepath)
+		return nil
+	end
+
+	local file_data = file:read("*all")
+	file:close()
+
+	if not file_data then
+		M.logger:error("Empty Lua file", filepath)
+		return nil
+	end
+
+	if M.LUA_REQUIRE_AS_STRING then
+		
+		file_data = file_data:gsub('require%("([^"]+)"%)', function(path)
+			return string.format('"/%s"', path:gsub("%.", "/") .. ".lua")
+		end)
+	end
+
+	local is_ok, result_or_error = pcall(load, file_data)
+	if not is_ok then
+		M.logger:error("Can't load the Lua file", result_or_error)
+		return nil
+	end
+
+	if result_or_error then
+		local parse_ok, parsed_data = pcall(result_or_error)
+		if parse_ok and parsed_data and type(parsed_data) == "table" then
+			return parsed_data
+		else
+			M.logger:error("Can't parse the Lua file", parsed_data)
+			return nil
+		end
+	end
+
+	return nil
+end
+
+
+
+
+
+
+function M.save_serialized(data, filepath)
+	local success, result = pcall(sys.save, filepath, data)
+	if not success then
+		M.logger:error("Failed to save serialized file", { filepath = filepath, error = result })
+		return false
+	end
+	return result
+end
+
+
+
+
+
+function M.load_serialized(filepath)
+	if not sys.exists(filepath) then
+		M.logger:debug("Serialized file does not exist", filepath)
+		return nil
+	end
+
+	local success, result = pcall(sys.load, filepath)
+	if not success then
+		M.logger:error("Failed to load serialized file", { filepath = filepath, error = result })
+		return nil
+	end
+	return result
+end
+
+
+
+
+
+
+function M.save_binary(data, filepath)
+	local file = io.open(filepath, "wb")
+	if not file then
+		M.logger:error("Can't open file for writing", filepath)
+		return false
+	end
+
+	file:write(data)
+	file:close()
+	return true
+end
+
+
+
+
+
+function M.load_binary(filepath)
+	local file = io.open(filepath, "rb")
+	if not file then
+		M.logger:debug("Binary file does not exist", filepath)
+		return nil
+	end
+
+	local data = file:read("*all")
+	file:close()
+	return data
+end
+
+
+
+
+
+function M.load_file_by_path(filepath)
+	local format = M.detect_format(filepath)
+
+	if format == M.FORMAT.JSON then
+		return M.load_json(filepath)
+	elseif format == M.FORMAT.LUA then
+		return M.load_lua(filepath)
+	elseif format == M.FORMAT.SERIALIZED then
+		return M.load_serialized(filepath)
+	end
+
+	return nil
+end
+
+
+
+
+
+function M.delete_file_by_path(filepath)
+	if html5 then
+		M.delete_html5(filepath)
+	end
+
+	return os.remove(filepath)
+end
+
+
+
+
+
+function M.is_file_exists_by_path(filepath)
+	if html5 then
+		return M.load_html5(filepath) ~= nil
+	end
+
+	local file = io.open(filepath)
+	if not file then
+		return false
+	end
+
+	file:close()
+	return true
+end
+
+
+
+
+
+
+
+function M.save_file_by_path(data, filepath, format)
+	
+	if html5 then
+		return M.save_html5(data, filepath)
+	end
+
+	format = format or M.detect_format(filepath)
+
+	if format == M.FORMAT.JSON then
+		
+		return M.save_json(data, filepath)
+	elseif format == M.FORMAT.LUA then
+		
+		return M.save_lua(data, filepath)
+	elseif format == M.FORMAT.SERIALIZED then
+		
+		return M.save_serialized(data, filepath)
+	end
+
+	M.logger:error("Unknown format for saving", format)
+	return false
+end
+
+
+
+
+
+function M.override(source, target)
+	for key, value in pairs(source) do
+		if type(value) == "table" and target[key] then
+			M.override(value, target[key])
+		else
+			target[key] = value
+		end
+	end
+end
+
+
+
+
+
+
+
+function M.table_to_lua_string(tbl, indent, is_array)
+	indent = indent or ""
+	local result = "{\n"
+
+	
+	local array_part = {}
+	local dict_part = {}
+
+	
+	for k, v in pairs(tbl) do
+		if type(k) == "number" and k > 0 and k <= #tbl then
+			array_part[k] = v
+		else
+			dict_part[k] = v
+		end
+	end
+
+	
+	if is_array or #array_part > 0 then
+		for i = 1, #array_part do
+			local v = array_part[i]
+			result = result .. indent .. "    "
+
+			
+			if type(v) == "table" then
+				
+				local v_is_array = #v > 0
+				result = result .. M.table_to_lua_string(v, indent .. "    ", v_is_array)
+			elseif type(v) == "string" then
+				result = result .. string.format("%q", v)
+			else
+				result = result .. tostring(v)
+			end
+			result = result .. ",\n"
+		end
+	end
+
+	
+	local sorted_keys = {}
+	for k in pairs(dict_part) do
+		table.insert(sorted_keys, k)
+	end
+	table.sort(sorted_keys, function(a, b)
+		
+		return tostring(a) < tostring(b)
+	end)
+
+	
+	for _, k in ipairs(sorted_keys) do
+		local v = dict_part[k]
+		result = result .. indent .. "    "
+
+		
+		if type(k) == "string" then
+			
+			if k:match("[^%w_]") then
+				result = result .. "[" .. string.format("%q", k) .. "]"
+			else
+				result = result .. k
+			end
+		else
+			result = result .. "[" .. tostring(k) .. "]"
+		end
+		result = result .. " = "
+
+		
+		if type(v) == "table" then
+			local v_is_array = #v > 0
+			result = result .. M.table_to_lua_string(v, indent .. "    ", v_is_array)
+		elseif type(v) == "string" then
+			local is_require = M.LUA_REQUIRE_AS_STRING and v:sub(-1) == ')' and v:sub(1, 8) == 'require('
+			if is_require then
+				result = result .. v
+			else
+				result = result .. string.format("%q", v)
+			end
+		else
+			result = result .. tostring(v)
+		end
+		result = result .. ",\n"
+	end
+
+	result = result .. indent .. "}"
+	return result
+end
+
+local GET_LOCAL_STORAGE = [[
+(function() {
+	try {
+		return window.localStorage.getItem('%s') || '';
+	} catch(e) {
+		return '';
+	}
+}) ()
+]]
+
+
+
+
+
+function M.load_html5(path, load_as_binary_data)
+	local web_data = html5.run(string.format(GET_LOCAL_STORAGE, path))
+	if not web_data or web_data == "" then
+		M.logger:debug("No data in local storage", path)
+		return nil
+	end
+
+	local decoded = defold_saver.decode_base64(web_data)
+
+	if load_as_binary_data then
+		return decoded
+	end
+
+	local is_ok, lua_data = pcall(sys.deserialize, decoded)
+	if not is_ok then
+		M.logger:error("Can't parse the data from local storage", lua_data)
+		return nil
+	end
+
+	return lua_data
+end
+
+
+local SET_LOCAL_STORAGE = [[
+(function() {
+	try {
+		window.localStorage.setItem('%s', '%s');
+		return true;
+	} catch(e) {
+		return false;
+	}
+})()
+]]
+
+
+
+
+
+function M.save_html5(data, path)
+	if type(data) ~= "table" then
+		
+		local encoded_data = defold_saver.encode_base64(data)
+		local html_command = string.format(SET_LOCAL_STORAGE, path, encoded_data)
+		local is_save_successful = html5.run(html_command)
+		return (not not is_save_successful)
+	end
+
+	
+	local encoded_data = defold_saver.encode_base64(sys.serialize(data))
+	local html_command = string.format(SET_LOCAL_STORAGE, path, encoded_data)
+	local is_save_successful = html5.run(html_command)
+	return (not not is_save_successful)
+end
+
+
+local REMOVE_LOCAL_STORAGE = [[
+(function() {
+	try {
+		window.localStorage.removeItem('%s');
+		return true;
+	} catch(e) {
+		return false;
+	}
+})()
+]]
+
+
+
+
+function M.delete_html5(path)
+	local is_delete_successful = html5.run(string.format(REMOVE_LOCAL_STORAGE, path))
+	return (not not is_delete_successful)
+end
+
+
+return M
+@saver/saver_internal.lua" 

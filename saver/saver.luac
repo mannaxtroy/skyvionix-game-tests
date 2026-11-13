@@ -1,0 +1,656 @@
+
+ŒK
+÷J
+
+
+
+
+
+
+
+local storage = require("saver.storage")
+local migrations = require("saver.migrations")
+local saver_internal = require("saver.saver_internal")
+
+
+local PROJECT_NAME = sys.get_config_string("project.title"):gsub("[^%w_ ]", "")
+local DIRECTORY_PATH = sys.get_config_string("saver.save_folder", PROJECT_NAME)
+local SAVE_NAME = sys.get_config_string("saver.save_name", "game")
+local SAVER_KEY = sys.get_config_string("saver.saver_key", "saver")
+local DEFAULT_AUTOSAVE_TIMER = sys.get_config_int("saver.autosave_timer", 3)
+local STORAGE_KEY = sys.get_config_string("saver.storage_key", "storage") 
+local IS_WINDOWS = sys.get_sys_info().system_name == "Windows"
+
+
+local INSTANCE_INDEX = sys.get_config_int("project.instance_index", 0)
+if INSTANCE_INDEX > 0 then
+	SAVE_NAME = SAVE_NAME .. "_" .. INSTANCE_INDEX
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local M = {}
+M.autosave_timer_id = nil
+M.autosave_timer_counter = 0
+M.last_autosave_time = nil
+M.before_save_callback = nil
+
+
+
+M.FORMAT = {
+	JSON = "json",        
+	LUA = "lua",          
+	SERIALIZED = "serialized", 
+}
+
+
+
+
+
+
+
+
+function M.set_logger(logger_instance)
+	saver_internal.logger = logger_instance or saver_internal.empty_logger
+end
+
+
+
+
+
+
+
+
+function M.init(config)
+	if config then
+		DIRECTORY_PATH = config.save_folder or DIRECTORY_PATH
+		SAVE_NAME = config.save_name or SAVE_NAME
+		SAVER_KEY = config.saver_key or SAVER_KEY
+		STORAGE_KEY = config.storage_key or STORAGE_KEY
+		DEFAULT_AUTOSAVE_TIMER = config.autosave_timer or DEFAULT_AUTOSAVE_TIMER
+		saver_internal.LUA_REQUIRE_AS_STRING = config.lua_require_as_string or saver_internal.LUA_REQUIRE_AS_STRING
+	end
+
+	M.load_game_state()
+	M.check_game_version()
+	M.set_autosave_timer(DEFAULT_AUTOSAVE_TIMER)
+
+	saver_internal.logger:debug("Saver initialized", { save_name = SAVE_NAME, instance_index = INSTANCE_INDEX })
+end
+
+
+
+
+
+
+
+
+
+
+function M.save_game_state(save_name)
+	if M.before_save_callback then
+		M.before_save_callback()
+	end
+
+	save_name = save_name or SAVE_NAME
+	local path = M.get_save_path(save_name)
+
+	
+	local game_state = M.get_game_state()
+	local saver_state = game_state[SAVER_KEY]
+	saver_state.version = saver_state.version + 1
+
+	
+	local is_success = M.save_file_by_path(game_state, path)
+	if is_success then
+		saver_internal.logger:trace("Save game state to json", { save_name = save_name, path = path })
+	else
+		saver_internal.logger:error("Can't save the file to save directory", { save_name = save_name, path = path })
+	end
+
+	return is_success
+end
+
+
+
+
+
+
+
+function M.load_game_state(save_name)
+	save_name = save_name or SAVE_NAME
+
+	
+	local game_state = M.load_file_by_name(save_name)
+	local is_loaded = game_state ~= nil
+
+	M.set_game_state(game_state or {})
+
+	saver_internal.reset_state()
+	
+	
+	saver_internal.state.migration_version = migrations.get_count()
+	
+	M.bind_save_state(SAVER_KEY, saver_internal.state)
+
+	storage.reset_state()
+	M.bind_save_state(STORAGE_KEY, storage.state)
+
+	if is_loaded then
+		saver_internal.logger:info("Load game state", { save_name = save_name, path = M.get_save_path(save_name) })
+	else
+		saver_internal.logger:info("New game state created", { save_name = save_name, path = M.get_save_path(save_name) })
+	end
+
+	return is_loaded
+end
+
+
+
+
+
+
+
+
+
+
+
+function M.delete_game_state(save_name)
+	save_name = save_name or SAVE_NAME
+
+	local path = M.get_save_path(save_name)
+	local is_success = M.delete_file_by_path(path)
+
+	if is_success then
+		saver_internal.logger:info("Delete game state", { save_name = save_name, path = path })
+	else
+		saver_internal.logger:info("File not exists to remove", { save_name = save_name, path = path })
+	end
+
+	return is_success
+end
+
+
+
+
+
+
+function M.get_game_state()
+	return saver_internal.GAME_STATE
+end
+
+
+
+
+
+
+
+
+function M.set_game_state(data)
+	assert(data, "Can't set nil game state")
+	saver_internal.GAME_STATE = data
+	return true
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function M.bind_save_state(table_key_id, table_reference)
+	local save_table = M.get_game_state()
+	assert(save_table, "Add save part should be called after init")
+
+	
+	if not save_table[table_key_id] then
+		save_table[table_key_id] = table_reference
+		return table_reference
+	end
+
+	
+	
+	local user_table_data = save_table[table_key_id]
+	save_table[table_key_id] = table_reference
+
+	saver_internal.override(user_table_data, table_reference)
+
+	return table_reference
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function M.save_file_by_path(data, path, format)
+	return saver_internal.save_file_by_path(data, path, format)
+end
+
+
+
+
+
+
+function M.save_binary_by_path(data, path)
+	if html5 then
+		return saver_internal.save_html5(data, path)
+	end
+
+	return saver_internal.save_binary(data, path)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+function M.load_file_by_path(path, format)
+	
+	if html5 then
+		return saver_internal.load_html5(path, false)
+	end
+
+	if format then
+		if format == M.FORMAT.JSON then
+			return saver_internal.load_json(path)
+		elseif format == M.FORMAT.LUA then
+			return saver_internal.load_lua(path)
+		elseif format == M.FORMAT.SERIALIZED then
+			return saver_internal.load_serialized(path)
+		end
+	end
+	return saver_internal.load_file_by_path(path)
+end
+
+
+
+
+
+function M.load_binary_by_path(path)
+	if html5 then
+		return saver_internal.load_html5(path, true) 
+	end
+
+	return saver_internal.load_binary(path)
+end
+
+
+
+
+
+function M.delete_file_by_path(path)
+	return saver_internal.delete_file_by_path(path)
+end
+
+
+
+
+
+
+function M.is_file_exists_by_path(path)
+	return saver_internal.is_file_exists_by_path(path)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function M.save_file_by_name(data, filename, format)
+	if data == nil then
+		saver_internal.logger:error("Cannot save nil data", { filename = filename })
+		return false
+	end
+
+	if not filename or filename == "" then
+		saver_internal.logger:error("Cannot save with empty filename")
+		return false
+	end
+
+	local path = M.get_save_path(filename)
+	return M.save_file_by_path(data, path, format)
+end
+
+
+
+
+
+
+function M.save_binary_by_name(data, filename)
+	return M.save_binary_by_path(data, M.get_save_path(filename))
+end
+
+
+
+
+
+
+
+
+
+function M.load_file_by_name(filename, format)
+	return M.load_file_by_path(M.get_save_path(filename), format)
+end
+
+
+
+
+
+function M.load_binary_by_name(filename)
+	return M.load_binary_by_path(M.get_save_path(filename))
+end
+
+
+
+
+
+
+function M.delete_file_by_name(filename)
+	return M.delete_file_by_path(M.get_save_path(filename))
+end
+
+
+
+
+
+
+function M.is_file_exists_by_name(filename)
+	return M.is_file_exists_by_path(M.get_save_path(filename))
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+function M.get_save_path(filename)
+	
+	if not filename then
+		local directory_path = DIRECTORY_PATH
+		return sys.get_save_file(directory_path, "")
+	end
+
+	filename = filename:gsub("[\\/:]", "_")
+
+	return sys.get_save_file(DIRECTORY_PATH, filename)
+end
+
+
+
+
+
+
+function M.get_save_version()
+	return M.get_game_state()[SAVER_KEY].version
+end
+
+
+
+
+
+
+
+function M.set_autosave_timer(timer)
+	AUTOSAVE_TIMER = timer
+	M.schedule_autosave()
+end
+
+
+
+
+function M.get_autosave_timer()
+	return AUTOSAVE_TIMER
+end
+
+
+
+
+function M.on_autosave_timer()
+	if M.autosave_timer_counter <= 0 then
+		return
+	end
+
+	local current_time = socket.gettime()
+	local dt = current_time - M.last_autosave_time
+	M.autosave_timer_counter = M.autosave_timer_counter - dt
+	M.last_autosave_time = current_time
+
+	if M.autosave_timer_counter <= 0 then
+		M.save_game_state()
+		M.autosave_timer_counter = AUTOSAVE_TIMER
+	end
+end
+
+
+
+
+function M.schedule_autosave()
+	if M.autosave_timer_id then
+		timer.cancel(M.autosave_timer_id)
+		M.autosave_timer_id = nil
+	end
+
+	if AUTOSAVE_TIMER > 0 then
+		M.autosave_timer_id = timer.delay(1, true, M.on_autosave_timer)
+		M.autosave_timer_counter = AUTOSAVE_TIMER
+		M.last_autosave_time = socket.gettime()
+	end
+end
+
+
+
+function M.check_game_version()
+	local saver_state = M.get_game_state()[SAVER_KEY]
+
+	local last_version = saver_state.last_game_version
+	local current_version = sys.get_config_string("project.version")
+
+	if last_version ~= "" and (saver_internal.parse_game_version(current_version) < saver_internal.parse_game_version(last_version)) then
+		saver_internal.logger:error("Downgrading game version", { previous = last_version, current = current_version })
+	end
+
+	saver_state.last_game_version = current_version
+end
+
+
+
+
+
+
+
+function M.get_current_game_project_folder()
+	if not io.popen or html5 then
+		return nil
+	end
+	
+	local file = io.popen(IS_WINDOWS and "cd" or "pwd")
+
+	if not file then
+		return nil
+	end
+
+	local path = file:read("*l")
+	file:close()
+
+	if not path then
+		return nil
+	end
+
+	
+	local game_project_path = path .. "/game.project"
+	local game_project_file = io.open(game_project_path, "r")
+	if not game_project_file then
+		return nil
+	end
+
+	game_project_file:close()
+	return path
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function M.set_migrations(migrations_table)
+	migrations.set_migrations(migrations_table)
+end
+
+
+
+
+function M.apply_migrations()
+	local game_state = M.get_game_state()
+	local saver_state = game_state[SAVER_KEY]
+
+	local current_version = saver_state.migration_version
+	local migrations_count = migrations.get_count()
+
+	while current_version < migrations_count do
+		current_version = current_version + 1
+		migrations.apply(current_version, M.get_game_state(), saver_internal.logger)
+	end
+
+	saver_state.migration_version = migrations_count
+end
+
+
+
+
+
+
+
+function M.get_value(key_id, default_value)
+	local value = M.get_game_state()[SAVER_KEY].storage[key_id]
+	if value == nil then
+		return default_value
+	end
+
+	return value
+end
+
+
+
+
+
+function M.set_value(key_id, value)
+	M.get_game_state()[SAVER_KEY].storage[key_id] = value
+end
+
+
+
+
+
+function M.is_value_exists(key_id)
+	return M.get_game_state()[SAVER_KEY].storage[key_id] ~= nil
+end
+
+
+
+
+
+
+
+
+
+M.before_save_callback = nil
+
+
+return M
+@saver/saver.luasaver.storagesaver.migrationssaver.saver_internal/saver/storage.luac/saver/migrations.luac/saver/saver_internal.luac" 

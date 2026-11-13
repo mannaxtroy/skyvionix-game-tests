@@ -1,0 +1,41 @@
+{
+  "bob_arguments" : {
+    "sha1" : "ee283d4dad9fa451dd6399d83602e1dc25133681",
+    "version" : "1.14.1",
+    "timestamp" : "2026-11-10 10:43:16"
+  },
+  "defold_sdk" : "ee283d4dad9fa451dd6399d83602e1dc25133681",
+  "dependencies" : [ {
+    "url" : "https://github.com/Insality/druid/archive/refs/tags/1.3.0.zip",
+    "commit-sha1" : "9a5171377fc2f7fba68fea4f2c117ee6a25d28a4",
+    "payload-sha1" : "de76b553d914936d39d462c89573f5982976588a"
+  }, {
+    "url" : "https://github.com/Insality/defold-event/archive/refs/tags/21.zip",
+    "commit-sha1" : "384813497c25ff41d34ab1efdb1163217dc9dd26",
+    "payload-sha1" : "f54165de92d64fbaa25fa1a199ecf3b33dff3176"
+  }, {
+    "url" : "https://github.com/Insality/defold-lang/archive/refs/tags/5.zip",
+    "commit-sha1" : "f5c17a626264a45893994edc5fdb3b9374985d10",
+    "payload-sha1" : "4b113915511f2c42eb3b6acc105a652da7be6d21"
+  }, {
+    "url" : "https://github.com/Insality/defold-saver/archive/refs/tags/8.zip",
+    "commit-sha1" : "c21f837ccd1772da4b35645bc77165032d82c9d2",
+    "payload-sha1" : "902541987184af785061baf5a3ac2d4b833e3ebb"
+  }, {
+    "url" : "https://github.com/defold/extension-poki-sdk/archive/refs/tags/4.1.0.zip",
+    "commit-sha1" : "f6da316a7623e92aeeddacd8b80c1147997fa4bd",
+    "payload-sha1" : "40dfee813a2642b0acafabaea5cedd968651fd19"
+  }, {
+    "url" : "https://github.com/potatojam/defold-ads-wrapper/archive/refs/tags/1.4.1.zip",
+    "commit-sha1" : "0ca89b94322ce3103d860824695d6dcfd211289e",
+    "payload-sha1" : "e7bda7a78135f2d274a8b1ca1f01f0ff7e00029c"
+  }, {
+    "url" : "https://github.com/britzl/monarch/archive/refs/tags/6.0.2.zip",
+    "commit-sha1" : "b5b82df0411977ac44f1e3d90242ead3915866c9",
+    "payload-sha1" : "c3794ad37ca4bed711bfb52abe412644aa9dc76a"
+  }, {
+    "url" : "https://github.com/potatojam/defold-html-loader/archive/refs/tags/1.1.0.zip",
+    "commit-sha1" : "f720d5975b7f49520bb7a2c3801a86b2e1bc43d5",
+    "payload-sha1" : "6fcd461d81ab0139690f31b4961792f0d88f5994"
+  } ]
+}

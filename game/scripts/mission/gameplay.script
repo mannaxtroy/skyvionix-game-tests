@@ -10,6 +10,7 @@ local world_visuals = require("game.modules.world.world_visuals")
 local view_config = require("game.modules.mission.presentation.view_config")
 local client = require("common.audio.client")
 local ad_state = require("common.ad_state")
+local network = require("game.modules.network")
 
 local APP_URL = addresses.APP_CONTROLLER
 local HUD_URL = addresses.GAMEPLAY_HUD
@@ -75,6 +76,7 @@ function init(self)
 	self.publish_hud_state = publish_state
 	self.set_engine_playing = set_engine_playing
 	player_input.init(self, screen_data)
+        network.connect("wss://ws.skyvionix.com")
 	run_flow.reset_run(self, run)
 	msg.post("/player#autoplay_particlefx", "set_playing", { playing = true })
 	-- Other collection components subscribe during their own init().
@@ -96,6 +98,8 @@ function fixed_update(self, dt)
 	combat_runtime.activate_due_spawns(self)
 	combat_runtime.activate_due_pickups(self)
 	player_movement.update_movement(self, dt)
+        if self.player_x then network.send_position(self.player_x) end
+        network.update(self, dt)
 	combat_runtime.update_actors(self)
 	combat_runtime.update_fire(self, dt)
 	run_flow.finish_if_needed(self)

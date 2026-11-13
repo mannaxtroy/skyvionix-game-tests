@@ -1,0 +1,7 @@
+size {
+  x: 8.0
+  y: 8.0
+}
+text: " "
+font: "/assets/fonts/arabic.font"
+material: "/builtins/fonts/label-df.material"
