@@ -7,27 +7,19 @@ on:
 jobs:
   build-web:
     runs-on: ubuntu-latest
+    container:
+      image: defold/defold:1.9.2
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-
-      - name: Download Defold Bob (Headless Builder)
+      - name: Resolve Dependencies
         run: |
-          curl -L -o bob.jar https://github.com/defold/defold/releases/download/1.9.2/bob.jar
-
-      - name: Resolve Dependencies (Download Web Templates)
-        run: |
-          java -jar bob.jar resolve
+          bob resolve
 
       - name: Build HTML5/WASM
         run: |
-          java -jar bob.jar --archive --platform js-web --variant debug build
+          bob --archive --platform js-web --variant debug build
 
       - name: Upload Finished Build
         uses: actions/upload-artifact@v4
