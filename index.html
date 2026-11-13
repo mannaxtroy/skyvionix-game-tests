@@ -417,5 +417,26 @@
 				});
 		}
 	</script>
- </body>
+ 
+<script>
+  let ws = null;
+  window.connectSkyvionixWS = function(url) {
+    ws = new WebSocket(url);
+    ws.onopen = () => console.log("WebSocket Connected to Render!");
+    ws.onerror = (e) => console.log("WebSocket Error", e);
+    ws.onmessage = (event) => {
+      // Pass messages back to Lua (requires defold html5 listener setup)
+      if (window.DefoldLuaCallback) {
+         window.DefoldLuaCallback(event.data);
+      }
+    };
+  };
+  window.sendPlayerPos = function(x) {
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      ws.send(JSON.stringify({ action: "sync", x: x }));
+    }
+  };
+</script>
+</body>
+
 </html>
