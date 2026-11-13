@@ -7,19 +7,15 @@ on:
 jobs:
   build-web:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/defold/defold:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Resolve Dependencies
-        run: |
-          bob resolve
-
-      - name: Build HTML5/WASM
-        run: |
-          bob --archive --platform js-web --variant debug build
+      - name: Build Defold Web
+        uses: prismglue/defold-builder-simple@1.1.0
+        with:
+          project_title: "Starbreaker"
+          defold_version: "1.9.2"
 
       - name: Upload Finished Build
         uses: actions/upload-artifact@v4
