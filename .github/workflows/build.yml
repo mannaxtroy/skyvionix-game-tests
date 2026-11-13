@@ -16,6 +16,9 @@ jobs:
         with:
           target-platform: 'web'
 
+      - name: Fix Permissions
+        run: sudo chmod -R 777 build/
+
       - name: Upload Finished Build
         uses: actions/upload-artifact@v4
         with:
