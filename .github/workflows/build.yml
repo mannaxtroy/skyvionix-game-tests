@@ -19,7 +19,11 @@ jobs:
 
       - name: Download Defold Bob (Headless Builder)
         run: |
-          curl -L -o bob.jar https://github.com/defold/defold/releases/download/1.6.5/bob.jar
+          curl -L -o bob.jar https://github.com/defold/defold/releases/download/1.9.2/bob.jar
+
+      - name: Resolve Dependencies (Download Web Templates)
+        run: |
+          java -jar bob.jar resolve
 
       - name: Build HTML5/WASM
         run: |
