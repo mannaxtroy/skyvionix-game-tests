@@ -1,0 +1,32 @@
+name: Build Starbreaker (Defold) to Web
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-web:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Download Defold Bob (Headless Builder)
+        run: |
+          curl -L -o bob.jar https://github.com/defold/defold/releases/download/1.6.5/bob.jar
+
+      - name: Build HTML5/WASM
+        run: |
+          java -jar bob.jar --archive --platform js-web --variant debug build
+
+      - name: Upload Finished Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: starbreaker-web-build
+          path: build/default/
