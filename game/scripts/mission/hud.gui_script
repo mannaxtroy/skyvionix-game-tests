@@ -369,7 +369,7 @@ function on_input(self, action_id, action)
 		player_input.virtual_fire(self.is_fire_held == true, controls.fire_started == true)
 	end
 
-	if controls.consumed or self.is_touch_overlay_visible and actions.is_pointer(action_id) then
+	if controls.consumed then
 		return true
 	end
 	-- A mouse drag can end over Pause, where Druid consumes the release.
