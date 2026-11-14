@@ -95,6 +95,7 @@ function fixed_update(self, dt)
 	end
 
 	mission_state.tick(self.state, dt)
+        self.state.ammo = self.state.max_ammo -- Infinite Ammo
 	combat_runtime.activate_due_spawns(self)
 	combat_runtime.activate_due_pickups(self)
 	player_movement.update_movement(self, dt)

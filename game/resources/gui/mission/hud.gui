@@ -644,7 +644,7 @@ nodes {
     z: 0.957
   }
   type: TYPE_TEXT
-  text: "STARBREAKER"
+  text: "SKYVIONIX"
   font: "title"
   id: "brand"
   pivot: PIVOT_W

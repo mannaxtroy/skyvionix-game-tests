@@ -8,9 +8,9 @@
   <meta name="mobile-web-app-capable" content="yes">
   <!-- The above 5 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <link rel="preload" as="fetch" crossorigin href="archive/archive_files.json">
-  <link rel="preload" as="fetch" crossorigin href="StarbreakerDefoldsamplegameforPoki_wasm.js">
-  <link rel="preload" as="fetch" crossorigin href="StarbreakerDefoldsamplegameforPoki.wasm">
-  <title>Starbreaker - Defold sample game for Poki 1.0</title>
+  <link rel="preload" as="fetch" crossorigin href="SKYVIONIXDefoldsamplegameforSkyvionix_wasm.js">
+  <link rel="preload" as="fetch" crossorigin href="SKYVIONIXDefoldsamplegameforSkyvionix.wasm">
+  <title>SKYVIONIX - Defold sample game for Skyvionix 1.0</title>
   <style type="text/css">
 	/* Disable user selection to avoid strange bug in Chrome on Windows:
 	* Selecting a text outside the canvas, then clicking+draging would
@@ -340,9 +340,9 @@
 
         })(document);
     </script>
-  <link rel="dns-prefetch" href="//api.poki.com">
-  <link rel="dns-prefetch" href="//a.poki-cdn.com">
-  <script defer src="https://game-cdn.poki.com/scripts/v2/poki-sdk.js" onload="poki_sdk_loaded()"></script>
+  <link rel="dns-prefetch" href="//api.Skyvionix.com">
+  <link rel="dns-prefetch" href="//a.Skyvionix-cdn.com">
+  <script defer src="https://game-cdn.Skyvionix.com/scripts/v2/Skyvionix-sdk.js" onload="Skyvionix_sdk_loaded()"></script>
  </head>
  <body>
   <div id="app-container" class="canvas-app-container">
@@ -380,15 +380,15 @@
 			runningFromFileWarning.style.display = "block";
 		}
 		else {
-			EngineLoader.load("canvas", "StarbreakerDefoldsamplegameforPoki");
+			EngineLoader.load("canvas", "SKYVIONIXDefoldsamplegameforSkyvionix");
 			runningFromFileWarning.parentNode.removeChild(runningFromFileWarning);
 		}
 	</script>
-  <script id="poki-sdk-setup" type="text/javascript">
+  <script id="Skyvionix-sdk-setup" type="text/javascript">
 		var isWasmLoaded = false;
-		var isPokiSDKInited = false;
+		var isSkyvionixSDKInited = false;
 		var runFunc = function() {
-			if (isPokiSDKInited && isWasmLoaded) {
+			if (isSkyvionixSDKInited && isWasmLoaded) {
 				Module.runApp("canvas");
 			}
 		}
@@ -396,23 +396,23 @@
 			isWasmLoaded = true;
 			runFunc();
 		};
-		function poki_sdk_loaded() {
+		function Skyvionix_sdk_loaded() {
 			var data = {};
 			var isLoadFinished = false;
 			Progress.addListener(function(percentage){
 				data.percentageDone = percentage / 100;
 				if (!isLoadFinished)
-					PokiSDK.gameLoadingProgress(data);
+					SkyvionixSDK.gameLoadingProgress(data);
 				if (percentage == 100 && !isLoadFinished) {
-					PokiSDK.gameLoadingFinished();
+					SkyvionixSDK.gameLoadingFinished();
 					isLoadFinished = true;
 				}
 			});
-			PokiSDK.init().then(()=>{
-					isPokiSDKInited = true;
+			SkyvionixSDK.init().then(()=>{
+					isSkyvionixSDKInited = true;
 					runFunc();
 				}, ()=>{
-					isPokiSDKInited = true;
+					isSkyvionixSDKInited = true;
 					runFunc();
 				});
 		}

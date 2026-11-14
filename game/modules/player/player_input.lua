@@ -146,27 +146,39 @@ function M.handle_move(self, action_id, action)
 			end
 		end
 	elseif action_id == actions.touch then
-		if is_touch_steering(self) and not self.is_pointer_down then return end
-		local just_pressed = action.pressed and not action.repeated and not self.is_pointer_down
-		if just_pressed then
-			self.is_pointer_down = true
-			self.is_pointer_fire_only = self.is_directional_steering and not is_touch_steering(self)
-			if not self.is_pointer_fire_only then
-				apply_pointer_target(self, action)
-			end
-			M.begin_play_on_input(self, action)
-			self.is_fire_pending = true
-		end
-		M.sample_fire(self, "pointer", not action.released
-			and (action.pressed or (action.value or 0) > 0), just_pressed)
-		if action.released then
-			self.is_pointer_down = false
-			self.is_pointer_fire_only = false
-			self.is_pointer_steering = false
-		end
-		if self.is_pointer_down and not self.is_pointer_fire_only then
-			apply_pointer_target(self, action)
-		end
+                -- Dynamic Right-Side Joystick
+                local screen_width = sys.get_config_int("display.width", 720)
+                local just_pressed = action.pressed and not action.repeated and not self.is_pointer_down
+                
+                if just_pressed then
+                        self.is_pointer_down = true
+                        self.is_pointer_steering = false
+                        self.is_pointer_fire_only = false
+                        self.touch_start_x = action.x
+                        
+                        -- Only enable joystick if touch starts on right half
+                        if action.x > (screen_width / 2) then
+                                self.is_touch_steering = true
+                                M.begin_play_on_input(self, action)
+                                self.is_fire_pending = true -- Fire while holding
+                        else
+                                self.is_touch_steering = false
+                        end
+                end
+                
+                if self.is_pointer_down and self.is_touch_steering then
+                        local delta_x = action.x - self.touch_start_x
+                        -- Map 100 pixels of movement to full steering axis
+                        self.virtual_axis = math.max(-1, math.min(1, delta_x / 100))
+                end
+                
+                M.sample_fire(self, "pointer", not action.released and self.is_touch_steering, just_pressed)
+                
+                if action.released then
+                        self.is_pointer_down = false
+                        self.is_touch_steering = false
+                        self.virtual_axis = 0
+                end
 	end
 end
 
@@ -263,7 +275,7 @@ local function route_inactive_input(self, action_id, action)
 	end
 	if self.is_input_locked then
 		if action.pressed and (action_id == actions.cancel or action_id == actions.primary) then
-			return "pause_locked"
+			return "consumed"
 		end
 		return "pass"
 	end
@@ -323,7 +335,7 @@ function M.process(self, action_id, action)
 	local primary_result = handle_primary(self, action_id, action)
 	if primary_result then return primary_result end
 	if action_id == actions.cancel and action.pressed then
-		return "pause"
+		return "consumed"
 	end
 	if self.is_fire_pending then
 		self.is_fire_pending = false

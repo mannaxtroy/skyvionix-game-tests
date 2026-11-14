@@ -76,7 +76,7 @@ function M.attach(self)
 	ad_state.changed:subscribe(M.on_ad_changed, self)
 	bind_game_audio(self)
 	self.deferred_assets = deferred_pack_loader.new(deferred_assets, {
-		cache_namespace = "Starbreaker", proxy_owner = "main:/game_deferred_assets#loader",
+		cache_namespace = "SKYVIONIX", proxy_owner = "main:/game_deferred_assets#loader",
 		on_ready = function(id, spec)
 			if id == "audio" then music.on_deferred_audio_ready(self, { url = spec.sound_url })
 			else settings_flow.on_deferred_font_ready(self, { pack = id }) end

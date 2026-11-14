@@ -47,12 +47,12 @@ local function load_saved()
 	saver.init({
 		-- Saver 8's extension-less serialized path depends on sys.save()'s platform return value.
 		-- JSON gives a real boolean write result on native and uses the same local-storage adapter on HTML5.
-		save_name = "starbreaker.json",
+		save_name = "SKYVIONIX.json",
 		autosave_timer = 3,
 	})
 	state.game_state = saver.get_game_state()
-	return type(state.game_state.starbreaker) == "table"
-		and state.game_state.starbreaker or {}
+	return type(state.game_state.SKYVIONIX) == "table"
+		and state.game_state.SKYVIONIX or {}
 end
 
 local function init_lang(loaded)
@@ -72,7 +72,7 @@ end
 local function save()
 	local is_saved = false
 	if state.game_state then
-		state.game_state.starbreaker = persistent_payload()
+		state.game_state.SKYVIONIX = persistent_payload()
 		is_saved = saver.save_game_state() == true
 	end
 	if not is_saved and not state.is_save_pending then
