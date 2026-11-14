@@ -27,6 +27,7 @@ end
 ---@param self table
 ---@return boolean is_opened
 function M.show(self)
+        return false -- SKYVIONIX_DISABLED
 	local s = self.snapshot or {}
 	local topic = tips.context(s)
 	if self.is_open or s.is_blocked or s.is_ad_busy or not topic then return false end
