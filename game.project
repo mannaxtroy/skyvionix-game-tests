@@ -83,3 +83,6 @@ max_collisions = 128
 trigger_overlap_capacity = 128
 max_fixed_timesteps = 8
 
+
+[splash]
+image = 
