@@ -94,21 +94,12 @@ end
 ---Show or hide virtual controls for the current input mode.
 ---@param self table
 function M.refresh(self)
-	local is_visible = self.is_device_mobile or self.is_touch_detected or self.is_force_visible
-	if not is_visible then
-		M.release(self)
-	end
-	self.is_touch_overlay_visible = is_visible
-	gui.set_enabled(self.stick_base, is_visible)
-	gui.set_enabled(self.fire_button, is_visible)
-	gui.set_visible(self.stick_base, is_visible)
-	gui.set_visible(self.fire_button, is_visible)
-	if is_visible then
-		gui.set_alpha(self.stick_base, 1)
-		gui.set_alpha(self.stick_nub, 1)
-		gui.set_alpha(self.fire_button, 1)
-		self.radius = gui.get_size(self.stick_base).x * 0.5 * TRAVEL
-	end
+        -- Hide all static controls, HUD handles dynamic touches
+        gui.set_enabled(self.stick_base, false)
+        gui.set_enabled(self.fire_button, false)
+        gui.set_visible(self.stick_base, false)
+        gui.set_visible(self.fire_button, false)
+        self.is_touch_overlay_visible = false
 end
 
 ---Update touch controls when the device category changes.

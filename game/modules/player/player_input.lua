@@ -145,8 +145,7 @@ function M.handle_move(self, action_id, action)
 				M.begin_play_on_input(self, action)
 			end
 		end
-	elseif action_id == actions.touch then
-                -- Dynamic Right-Side Joystick
+        elseif action_id == actions.touch then
                 local screen_width = sys.get_config_int("display.width", 720)
                 local just_pressed = action.pressed and not action.repeated and not self.is_pointer_down
                 
@@ -156,27 +155,31 @@ function M.handle_move(self, action_id, action)
                         self.is_pointer_fire_only = false
                         self.touch_start_x = action.x
                         
-                        -- Only enable joystick if touch starts on right half
                         if action.x > (screen_width / 2) then
+                                -- Right side: Move
                                 self.is_touch_steering = true
                                 M.begin_play_on_input(self, action)
-                                self.is_fire_pending = true -- Fire while holding
                         else
+                                -- Left side: Fire
                                 self.is_touch_steering = false
+                                self.is_pointer_fire_only = true
+                                self.is_fire_pending = true
+                                M.begin_play_on_input(self, action)
                         end
                 end
                 
                 if self.is_pointer_down and self.is_touch_steering then
                         local delta_x = action.x - self.touch_start_x
-                        -- Map 100 pixels of movement to full steering axis
                         self.virtual_axis = math.max(-1, math.min(1, delta_x / 100))
                 end
                 
-                M.sample_fire(self, "pointer", not action.released and self.is_touch_steering, just_pressed)
+                -- Fire only if touching left side
+                M.sample_fire(self, "pointer", not action.released and self.is_pointer_fire_only, just_pressed)
                 
                 if action.released then
                         self.is_pointer_down = false
                         self.is_touch_steering = false
+                        self.is_pointer_fire_only = false
                         self.virtual_axis = 0
                 end
 	end
